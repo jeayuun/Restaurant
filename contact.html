@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistrovanti by Group 3: Contact Us</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fasthand&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="/static/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <style>
+        body {
+            font-family: Taviraj, sans-serif;
+            background-color: #fff4de;
+            color: #001528;
+        }
+
+        @font-face {
+            font-family: 'Edensor Free';
+            src: url('static/font/Edensor-FREE.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* -------------------------
+           |       Contact Page       |
+           ------------------------- */
+
+        /* Header Section */
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #001528;
+            margin-bottom: -10px;
+        }
+
+        .logo img {
+            width: 170px;
+        }
+
+        .nav-border-top {
+            margin-top: 0;
+            width: 97%;
+            border-top: 1px solid #001528;
+            margin: 5px 0;
+        }
+
+        .nav-border-bottom {
+            width: 100%;
+            border-top: 1px solid #001528;
+            margin: 0;
+        }
+
+        .nav-actions-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+
+        nav ul {
+            padding: 20px;
+            list-style: none;
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 25px;
+            color: #001528;
+            padding: 10px;
+            padding-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                z-index: 1;
+                display: none;
+                width: 100%;
+                background-color: #1b2d1f;
+                position: absolute;
+                top: 25%;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                gap: 20px;
+                align-items: center;
+                flex-direction: row;
+                visibility: hidden;
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                border-top: 2px solid #f8d9a0;
+                border-radius: 10px;
+                background: linear-gradient(135deg, #1b2d1f 0%, #2a3d2f 100%);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+                margin-bottom: 120px;
+            }
+
+            .nav-links.show {
+                visibility: visible;
+                opacity: 1;
+                display: flex;
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                font-size: 18px;
+                color: #001528;
+                text-decoration: none;
+                border-radius: 50px;
+                padding: 15px 25px;
+                width: 90%;
+                text-align: center;
+                background-color: #1b2d1f;
+                border-bottom: 1px solid #f8d9a0;
+                transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+                font-weight: 500;
+            }
+
+            .nav-links a:hover {
+                transform: scale(1.05);
+                border-left: 3px solid #f8d9a0;
+                padding-left: 20px;
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+        }
+
+        nav ul li a,
+        .actions a {
+            text-decoration: none;
+            color: #001528;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 30px;
+        }
+
+        nav ul li a:hover {
+            color: #002d57;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .reserve-btn {
+            text-decoration: none;
+            color: #001528;
+            font-size: 25px;
+            border-left: 1px solid #001528;
+            padding-left: 20px;
+        }
+
+        /* Contact Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            padding-bottom: 0px;
+        }
+
+        .hero h1 {
+            font-family: "Edensor Free", sans-serif;
+            font-size: 136px;
+            font-weight: 400;
+            line-height: 136px;
+            text-transform: uppercase;
+            color: #001528;
+            letter-spacing: 2px;
+            transition: transform 0.5s ease;
+            margin-top: -40px;
+        }
+
+        .contact-img-block {
+            border-radius: 50px;
+            overflow: hidden;
+            vertical-align: middle;
+            max-width: 100%;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="static/images/logov2.png" alt="Bistrovanti Logo" width="150">
+        </div>
+        <div class="nav-border-top"></div>
+        <div class="nav-border-bottom"></div>
+        <div class="nav-actions-wrapper">
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="actions">
+                <img alt="Cart Icon" class="cart-icon-image" loading="lazy"
+                    src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d833a6095ee4de20561510_cart-dark.svg"
+                    style="width: 30px;" />
+                <a href="#" class="reserve-btn">Reserve table</a>
+                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d2a4fb038a983ddc80a401_right-arrow.svg"
+                    loading="lazy" alt="Icon" class="inline-btn-icon">
+            </div>
+        </div>
+    </header>
+    <section class="hero">
+        <h1>CONTACT US</h1>
+        <div class="contact-img-block"><img
+                src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66f2ada495c7faecaf527c58_single-img-17.avif"
+                loading="lazy"
+                sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1439px) 98vw, (max-width: 1919px) 95vw, 1820px"
+                srcset="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66f2ada495c7faecaf527c58_single-img-17-p-500.avif 500w, https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66f2ada495c7faecaf527c58_single-img-17-p-800.avif 800w, https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66f2ada495c7faecaf527c58_single-img-17-p-1080.avif 1080w, https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66f2ada495c7faecaf527c58_single-img-17.avif 1820w"
+                alt="Single Image" class="contact-single-image"></div>
+    </section>
+
+    <!-- continue here -->
+
+</body>
+
+<script>
+    const heroText = document.querySelector('.hero h1');
+
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX;
+
+        const windowWidth = window.innerWidth;
+
+        const moveAmount = (mouseX / windowWidth) * 50 - 25;
+
+        heroText.style.transform = `translateX(${moveAmount}px)`;
+    });
+
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
+
+</script>
+
+</html>

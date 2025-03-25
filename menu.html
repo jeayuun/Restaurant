@@ -4,23 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bistrovanti by Group 3: Home Page</title>
-    <!-- <link rel="stylesheet" href="static/styles.css"> -->
+    <title>Bistrovanti by Group 3: Main Menu</title>
+    <link rel="stylesheet" href="static/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="/static/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
 
         body {
             font-family: Taviraj, sans-serif;
-            background-color: #1b2d1f;
-            color: #f8d9a0;
+            background-color: #001528;
+            color: #fff4de;
         }
 
         @font-face {
@@ -31,7 +26,7 @@
         }
 
         /* -------------------------
-           |       Home Page       |
+           |       Menu Page       |
            ------------------------- */
 
         /* Header Section */
@@ -57,13 +52,13 @@
         .nav-border-top {
             margin-top: 0;
             width: 97%;
-            border-top: 1px solid #f8d9a0;
+            border-top: 1px solid #fff4de;
             margin: 5px 0;
         }
 
         .nav-border-bottom {
             width: 100%;
-            border-top: 1px solid #f8d9a0;
+            border-top: 1px solid #fff4de;
             margin: 0;
         }
 
@@ -168,7 +163,7 @@
         }
 
         nav ul li a:hover {
-            color: #ffffff;
+            color: #f8d9a0;
         }
 
         .actions {
@@ -179,11 +174,12 @@
 
         .reserve-btn {
             text-decoration: none;
-            color: #f8d9a0;
+            color: #fff4de;
             font-size: 25px;
             border-left: 1px solid #fff4de;
             padding-left: 20px;
         }
+
 
         /* Hero Section */
         .hero {
@@ -202,29 +198,6 @@
             letter-spacing: 2px;
             transition: transform 0.5s ease;
             margin-top: -40px;
-        }
-
-        .more-btn {
-            font-family: Taviraj, sans-serif;
-            padding: 10px 30px;
-            font-size: 15px;
-            background-color: transparent;
-            color: #fff4de;
-            border: 1px solid #ffd99f;
-            border-radius: 30px;
-            cursor: pointer;
-            background-color: transparent;
-        }
-
-        .more-btn-border {
-            padding: 5px;
-            position: relative;
-            max-width: 100%;
-            display: inline-block;
-            border: 1px solid #ffd99f;
-            border-radius: 30px;
-            margin-top: 10px;
-            transition: transform 0.5s ease;
         }
 
         /* Gallery Section */
@@ -322,199 +295,17 @@
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-        /* About Section */
-        .about {
+         /* Menu Section */
+         .mainmenu {
             background-color: #fff4de;
             padding: 80px 20px;
             text-align: center;
         }
 
-        .about-content {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h2 {
-            font-family: "Fasthand", cursive;
-            font-size: 36px;
-            font-weight: 600;
-            line-height: 46px;
-            font-style: normal;
-            color: #001528;
-            margin-bottom: 20px;
-            transform: translateY(30px);
-            animation: fadeInFromDown 0.2s ease-in-out forwards;
-            animation-delay: var(--delay);
-        }
-
-        .about-text p {
-            font-family: Taviraj, sans-serif;
-            font-size: 30px;
-            color: #1b2d1f;
-            line-height: 1.4;
-            max-width: 1000px;
-            margin: 0 auto;
-            font-weight: 600;
-            transform: translateY(30px);
-            animation: fadeInFromDown 0.2s ease-in-out forwards;
-            animation-delay: var(--delay);
-        }
-
-        .about-text p {
-            --delay: 0.2s;
-        }
-
-        .about-images {
-            margin-top: 40px;
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .about-item {
-            text-align: center;
-            width: 30%;
-        }
-
-        .about-item img {
-            width: 100%;
-            height: auto;
-            border-top-left-radius: 200px;
-            border-top-right-radius: 200px;
-        }
-
-
-        .about-icon-box {
-            margin-top: -40px;
-            background-color: #fff4de;
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            margin-left: auto;
-            margin-right: auto;
-            border: 1px solid black;
-        }
-
-        .about-icon-box img {
-            width: 70%; /* Adjust icon size */
-            height: auto;
-            padding: 10px; /* Adds space around the icon */
-        }
-
-        .about-images img:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .about-item h3 {
-            margin-top: 10px;
-            margin-bottom: 8px;
-            font-size: 26px;
-            line-height: 36px;
-            font-weight: 600;
-            color: #001528;
-        }
-
-        .about-item p {
-            color: #001528;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 30px;
-        }
-
-        /* Menu Section */
-        .menu-section {
-            background-color: #001528;
-            padding: 70px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .menu-section h2 {
-            font-size: 55px;
-            font-weight: 650;
-            color: #fff4de;
-            margin-bottom: 40px;
-            margin-left: 50px;
-        }
-
-        .menu-item {
-            display: inline-block;
-            width: 23%;
-            margin: 20px;
-            background-color: #1b2d1f;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            color: #f8d9a0;
-        }
-
-        .menu-item img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .menu-item h3 {
-            font-size: 24px;
-            margin-top: 20px;
-            font-weight: 600;
-        }
-
-        .menu-item p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .menu-item span {
-            font-size: 20px;
-            color: #ffd99f;
-            font-weight: 600;
-        }
-
-        .menu-item a {
-            text-decoration: none;
-            background-color: #ffd99f;
-            color: #001528;
-            padding: 10px 20px;
-            margin-top: 10px;
-            display: inline-block;
-            border-radius: 25px;
-            font-weight: bold;
-        }
-
-        .menu-item a:hover {
-            background-color: #ffcb4e;
-        }
-
-        @media (max-width: 768px) {
-            .menu-item {
-                width: 45%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .menu-item {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 
 <body>
-
     <header>
         <div class="logo">
             <img src="static/images/logo.png" alt="Bistrovanti Logo" width="150">
@@ -536,21 +327,13 @@
                 <img alt="Cart Icon" class="cart-icon-image" loading="lazy" src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d16fced8e32e0b2760e5fc_cart.svg"
                     style="width: 30px;" />
                 <a href="#" class="reserve-btn">Reserve table</a>
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d170edb95b798eeea3c007_icon-01.svg"
+                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d2a4fb038a983ddc80a401_right-arrow.svg"
                     loading="lazy" alt="Icon" class="inline-btn-icon">
             </div>
         </div>
     </header>
-
     <section class="hero">
-        <h1>A contemporary blend of culinary traditions</h1>
-        <a href="about.html" class="more-btn-border">
-            <button class="more-btn">
-                More about
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d170edb95b798eeea3c007_icon-01.svg"
-                    loading="lazy" alt="Icon" class="inline-btn-icon" style="padding-left: 10px;">
-            </button>
-        </a>
+        <h1>Taste the tradition enjoy with the innovation</h1>
     </section>
 
     <div class="gallery">
@@ -576,85 +359,12 @@
         </div>
     </div>
 
-    <section class="about">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>For the best memories</h2>
-                <p>Where culinary excellence meets a warm and inviting atmosphere. Our menu is a celebration of fresh, locally sourced ingredients, expertly crafted into dishes. With our unique recipes, we guarantee flavors you won't forget!</p>
-            </div>
-            <div class="about-images">
-                <div class="about-item">
-                    <img src="static/images/homepage/about/about1.avif" alt="Premium Dining" />
-                    <div class="about-icon-box">
-                        <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d1a652e7bbe335367e7144_icon-02.svg" loading="lazy" alt="Icon" class="about-icon">
-                    </div>
-                    <h3>Premium Dining</h3>
-                    <p>Indulge in a refined culinary experience, where every dish is thoughtfully prepared to elevate your dining moments.</p>
-                </div>
-                <div class="about-item" style="margin-top: 60px;">
-                    <img src="static/images/homepage/about/about2.avif" alt="Abundant Flavors" />
-                    <div class="about-icon-box">
-                        <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d1a6522f6c368f4eece64c_icon-03.svg" loading="lazy" alt="Icon" class="about-icon">
-                    </div>
-                    <h3>Abundant Flavors</h3>
-                    <p>Every dish is crafted using the finest ingredients to ensure quality and flavor.</p>
-                </div>
-                <div class="about-item">
-                    <img src="static/images/homepage/about/about3.avif" alt="Indigenous Meal" />
-                    <div class="about-icon-box">
-                        <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d1a653f3c61b3747a7cd62_icon-04.svg" loading="lazy" alt="Icon" class="about-icon">
-                    </div>
-                    <h3>Indigenous Meal</h3>
-                    <p>Enjoy more than just a meal—make lasting memories with family and friends.</p>
-                </div>
-            </div>
-        </div>
+    <section class="mainmenu">
+        <!-- continue here -->
     </section>
-
-    <section class="menu-section">
-        <h2>Our Delicious Menu</h2>
-        <a href="menu.html" class="more-btn-border">
-            <button class="more-btn">
-                See all menu
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d170edb95b798eeea3c007_icon-01.svg"
-                    loading="lazy" alt="Icon" class="inline-btn-icon" style="padding-left: 10px;">
-            </button>
-        </a>
-
-        <div class="menu-item">
-            <img src="static/images/food/pide-lahmacun.jpg" alt="Pide lahmacun">
-            <h3>Pide lahmacun</h3>
-            <p>A traditional Turkish pizza with fresh ingredients.</p>
-            <span>$25.00 USD</span>
-            <a href="#">See more</a>
-        </div>
-
-        <div class="menu-item">
-            <img src="static/images/food/mexican-salad.jpg" alt="Mexican salad">
-            <h3>Mexican Salad</h3>
-            <p>A vibrant mix of fresh vegetables and beans.</p>
-            <span>$30.00 USD</span>
-            <a href="#">See more</a>
-        </div>
-
-        <div class="menu-item">
-            <img src="static/images/food/mexican-meal.jpg" alt="Mexican meal">
-            <h3>Mexican Meal</h3>
-            <p>A hearty Mexican dish with tortillas, beans, and meats.</p>
-            <span>$39.00 USD</span>
-            <a href="#">See more</a>
-        </div>
-
-        <div class="menu-item">
-            <img src="static/images/food/quesadilla-sliced.jpg" alt="Quesadilla sliced">
-            <h3>Quesadilla Sliced</h3>
-            <p>Delicious slices of quesadilla filled with cheese and chicken.</p>
-            <span>$25.00 USD</span>
-            <a href="#">See more</a>
-        </div>
-    </section>
-
 </body>
+
+
 
 <script>
     const heroText = document.querySelector('.hero h1');
@@ -675,6 +385,5 @@
     }
 
 </script>
-
 
 </html>
