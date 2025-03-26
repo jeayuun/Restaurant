@@ -8,9 +8,8 @@
     <!-- <link rel="stylesheet" href="static/styles.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fasthand&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link href="/static/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <style>
         * {
@@ -25,7 +24,8 @@
             color: #f8d9a0;
         }
 
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
         }
 
@@ -672,7 +672,7 @@
         }
 
         .social-icon.instagram {
-            background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Instagram-Outline-1024.png'); 
+            background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Instagram-Outline-1024.png');
         }
 
         .social-icon.facebook {
@@ -680,33 +680,34 @@
         }
 
         .social-icon.twitter {
-            background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Tumblr-Outline-1024.png'); 
+            background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Tumblr-Outline-1024.png');
         }
 
         .social-icon.pinterest {
-            background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Pinterest-Outline-1024.png'); 
+            background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Pinterest-Outline-1024.png');
         }
 
         .social-icon.youtube {
-            background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Youtube-Outline-1024.png'); 
+            background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Youtube-Outline-1024.png');
         }
 
         @media (max-width: 768px) {
             .social-item {
-                width: 45%; 
+                width: 45%;
                 height: 150px;
             }
         }
 
         @media (max-width: 480px) {
             .social-item {
-                width: 80%; 
+                width: 80%;
                 height: 150px;
             }
         }
 
         /* Footer Section */
-        .footer-top, .footer{
+        .footer-top,
+        .footer {
             background-color: #fff4de;
             color: #001528;
             padding: 60px 90px;
@@ -738,14 +739,14 @@
         .footer-row {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap; 
-            gap: 100px;  
+            flex-wrap: wrap;
+            gap: 100px;
         }
 
         .footer-item {
-            flex: 1; 
-            min-width: 220px;  
-            margin-bottom: 20px; 
+            flex: 1;
+            min-width: 220px;
+            margin-bottom: 20px;
         }
 
         .footer-item h3 {
@@ -795,17 +796,18 @@
             background-clip: text;
             padding: 0px;
             white-space: nowrap;
-            animation: marquee 28s linear infinite; 
+            animation: marquee 28s linear infinite;
             display: inline-block;
             position: relative;
         }
-        
+
         @keyframes marquee {
             0% {
                 transform: translateX(-30%);
             }
+
             100% {
-                transform: translateX(-100%); 
+                transform: translateX(-100%);
             }
         }
 
@@ -819,7 +821,6 @@
 </head>
 
 <body>
-
     <header>
         <div class="logo">
             <img src="static/images/logo.png" alt="Bistrovanti Logo" width="150">
@@ -848,7 +849,7 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" data-aos="fade-up" data-aos-duration="1500">
         <h1>A contemporary blend of culinary traditions</h1>
         <a href="about.html" class="more-btn-border">
             <button class="more-btn">
@@ -857,7 +858,7 @@
                     loading="lazy" alt="Icon" class="inline-btn-icon" style="padding-left: 10px;">
             </button>
         </a>
-    </section>
+    </section>    
 
     <div class="gallery">
         <div class="gallery-item first-item">
@@ -882,15 +883,15 @@
         </div>
     </div>
 
-    <section class="about">
+    <section class="about" data-aos="fade-up" data-aos-duration="1500">
         <div class="about-content">
-            <div class="about-text">
+            <div class="about-text" data-aos="fade-right" data-aos-delay="300">
                 <h2>For the best memories</h2>
                 <p>Where culinary excellence meets a warm and inviting atmosphere. Our menu is a celebration of fresh,
                     locally sourced ingredients, expertly crafted into dishes. With our unique recipes, we guarantee
                     flavors you won't forget!</p>
             </div>
-            <div class="about-images">
+            <div class="about-images" data-aos="fade-left" data-aos-delay="300">
                 <div class="about-item">
                     <img src="static/images/homepage/about/about1.avif" alt="Premium Dining" />
                     <div class="about-icon-box">
@@ -936,49 +937,49 @@
         </div>
 
         <div class="menu-items">
-            <div class="menu-item">
+            <div class="menu-item" data-aos="zoom-in" data-aos-delay="100">
                 <h3>Pide Lahmacun</h3>
                 <span>680 PHP</span>
                 <img src="https://cdn.prod.website-files.com/66d16eb9a8db170b0c9f5809/66f148a95d4e50bf05680153_menu-img-01.avif"
                     alt="Pide lahmacun">
             </div>
-            <div class="menu-item">
+            <div class="menu-item" data-aos="zoom-in" data-aos-delay="100">
                 <h3>Bean Salad </h3>
                 <span>250 PHP</span>
                 <img src="https://cdn.prod.website-files.com/66d16eb9a8db170b0c9f5809/66f14879c362ed550f9edca8_menu-img-02.avif"
                     alt="Bean Salad with Tomato and Herbs">
             </div>
-            <div class="menu-item">
+            <div class="menu-item" data-aos="zoom-in" data-aos-delay="100">
                 <h3>Chicken Taco</h3>
                 <span>550 PHP</span>
                 <img src="https://cdn.prod.website-files.com/66d16eb9a8db170b0c9f5809/66f148398d4366d7b711e70e_menu-img-03.avif"
                     alt="Chicken and Bean Taco">
             </div>
-            <div class="menu-item">
+            <div class="menu-item" data-aos="zoom-in" data-aos-delay="100">
                 <h3>Sliced Quesadillas</h3>
                 <span>580 PHP</span>
                 <img src="https://cdn.prod.website-files.com/66d16eb9a8db170b0c9f5809/66f1480ea91b938311d5af60_menu-img-04.avif"
                     alt="Cheesy Chicken Quesadillas">
             </div>
-            <div class="menu-item">
+            <div class="menu-item" data-aos="zoom-in" data-aos-delay="100">
                 <h3>Raclette Dish</h3>
                 <span>980 PHP</span>
                 <img src="https://cdn.prod.website-files.com/66d16eb9a8db170b0c9f5809/66f147e61fae731f1770fce5_menu-img-05.avif"
                     alt="Raclette Dish">
             </div>
-            <div class="menu-item">
+            <div class="menu-item" data-aos="zoom-in" data-aos-delay="100">
                 <h3>Kuku Pizza</h3>
                 <span>650 PHP</span>
                 <img src="https://cdn.prod.website-files.com/66d16eb9a8db170b0c9f5809/66f147aa675e7a7ee640143a_menu-img-06.avif"
                     alt="Omlette kuku pizza">
             </div>
-            <div class="menu-item">
+            <div class="menu-item" data-aos="zoom-in" data-aos-delay="100">
                 <h3>Lavash Grilled</h3>
                 <span>480 PHP</span>
                 <img src="https://cdn.prod.website-files.com/66d16eb9a8db170b0c9f5809/66f16194938dfd2080b6f868_menu-img-07.avif"
                     alt="Lavash grilled">
             </div>
-            <div class="menu-item">
+            <div class="menu-item" data-aos="zoom-in" data-aos-delay="100">
                 <h3>Fruit Cocktail</h3>
                 <span>150 PHP</span>
                 <img src="https://cdn.prod.website-files.com/66d16eb9a8db170b0c9f5809/66f145eb73470ae049c05b98_menu-img-08.avif"
@@ -998,62 +999,82 @@
         </div>
     </section>
 
-    <section class="socials">
+    <section class="socials" data-aos="fade-up" data-aos-duration="1500">
         <h1>Follow us</h1>
-        <div class="socials-gallery">
+        <div class="socials-gallery" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
             <div class="social-item">
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe6f61343c92095b064_insta-img-01.avif" alt="Instagram" />
+                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe6f61343c92095b064_insta-img-01.avif"
+                    alt="Instagram" />
                 <div class="social-icon instagram"></div>
             </div>
-            <div class="social-item">
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe60b3e38902c12f8d8_insta-img-02.avif" alt="Facebook" />
+            <div class="social-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe60b3e38902c12f8d8_insta-img-02.avif"
+                    alt="Facebook" />
                 <div class="social-icon facebook"></div>
             </div>
-            <div class="social-item">
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe665727dfa5570c249_insta-img-03.avif" alt="Twitter" />
+            <div class="social-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe665727dfa5570c249_insta-img-03.avif"
+                    alt="Twitter" />
                 <div class="social-icon twitter"></div>
             </div>
-            <div class="social-item">
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe6eb15144cb3cbd10f_insta-img-04.avif" alt="Pinterest" />
+            <div class="social-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe6eb15144cb3cbd10f_insta-img-04.avif"
+                    alt="Pinterest" />
                 <div class="social-icon pinterest"></div>
             </div>
-            <div class="social-item">
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe73afacf1bcad8aeeb_insta-img-06.avif" alt="Pinterest" />
+            <div class="social-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe73afacf1bcad8aeeb_insta-img-06.avif"
+                    alt="Pinterest" />
                 <div class="social-icon youtube"></div>
             </div>
         </div>
     </section>
 
     <section class="footer-top">
-        <div class="footer-top-content">
-            <h1>It was a memorable</h1>
-            <h2>From farm to table excellence in every bite</h2>
+        <div class="footer-top-content" style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h1>It was a memorable</h1>
+                <h2>From farm to table excellence in every bite</h2>
+            </div>
+
+            <div style="flex-grow: 1; text-align: center; ">
+                <form action="#" method="POST"
+                    style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                    <input type="email" placeholder="Email address"
+                        style="background-color:  transparent; font-family: Taviraj, sans-serif; padding: 12px 20px; font-size: 16px; border-radius: 30px 0 0 30px; border: 1px solid black; width: 300px; margin-right: 10px; outline: none;"
+                        required>
+                    <button type="submit"
+                        style="background-color: transparent; padding: 12px 30px; font-size: 16px; font-family: Taviraj, sans-serif; border-radius: 0 30px 30px 0; border: 1px solid black; cursor: pointer; transition: background-color 0.3s;">
+                        Subscribe now
+                    </button>
+                </form>
+            </div>
         </div>
-    </section>      
-    
+    </section>
+
     <footer class="footer">
         <div class="footer-row">
-            <div class="footer-item">
+            <div class="footer-item" data-aos="fade-up" data-aos-duration="1000">
                 <h3>Address</h3>
                 <p>123 Bistro Lane, Parqal</p>
                 <p>Paranaque, Metro Manila</p>
                 <p>Bestrovanti Restaurant, Philippines</p>
             </div>
-    
-            <div class="footer-item">
+
+            <div class="footer-item" data-aos="fade-up" data-aos-duration="1000">
                 <h3>Bistrovia opening hours</h3>
                 <p>Breakfast: 7:00AM - 9:00AM</p>
                 <p>Lunch: 12:00PM - 02:00PM</p>
                 <p>Dinner: 7:00PM - 10:00PM</p>
             </div>
-    
-            <div class="footer-item">
+
+            <div class="footer-item" data-aos="fade-up" data-aos-duration="1000">
                 <h3>Let's connect</h3>
                 <p>(123) 456-7890</p>
                 <p>contact@bistrovanti.com</p>
             </div>
-    
-            <div class="footer-item">
+
+            <div class="footer-item" data-aos="fade-up" data-aos-duration="1000">
                 <h3>Book a table</h3>
                 <p>Make your reservation for an unforgettable meal!</p>
                 <a href="contact.html" class="more-btn-border" style="border-color: #001528;">
@@ -1075,10 +1096,18 @@
             </marquee>
         </div>
     </footer>
-    
-    <div style="background-color: #fff4de; color: #001528; text-align: center; font-size: 14px; font-weight: 500; line-height: 24px; padding-bottom: 20px;">
-        <p>Copyright @ 2025 designed by BSCS 3-1N Group 3: Submission for Web Development. All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Changelog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;License</p>
+
+    <div
+        style="background-color: #fff4de; color: #001528; text-align: center; font-size: 14px; font-weight: 500; line-height: 24px; padding-bottom: 20px;">
+        <p>Copyright @ 2025 designed by BSCS 3-1N Group 3: Submission for Web Development. All rights
+            reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Changelog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;License
+        </p>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init(); // Initialize AOS animations
+    </script>
 </body>
 
 <script>
@@ -1150,8 +1179,5 @@
         document.querySelector('.nav-links').classList.toggle('show');
     }
 </script>
-
-
-
 
 </html>
