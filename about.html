@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="static/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fasthand&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="static/images/favicon.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
@@ -391,6 +393,260 @@
                 line-height: 70px;
             }
         }
+
+
+
+
+
+        /* Restaurant Interior Video Section */
+        #video-section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #restaurant-video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+        }
+
+        #video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-choices {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .section-choices ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .section-choices ul li {
+            margin: 0 30px;
+        }
+
+        .section-choices ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .section-choices ul li a:hover {
+            color: #f8d9a0;
+        }
+
+        /* Section Content */
+        section {
+            padding: 50px 20px;
+            margin: 50px 0;
+            background-color: #fff4de;
+        }
+
+        section h1,
+        section h2 {
+            font-size: 32px;
+            color: #fff4de;
+        }
+
+        section p {
+            font-size: 18px;
+            color: #fff4de;
+        }
+
+        /* ------------------------- |
+   |     About, History, and Mission Sections     |
+   ------------------------- */
+
+        #about,
+        #history,
+        #mission {
+            padding: 50px 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        #about h1,
+        #history h2,
+        #mission h2 {
+            font-size: 36px;
+            color: #001528;
+            margin-bottom: 20px;
+        }
+
+        #about p,
+        #history p,
+        #mission p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+
+            #about p,
+            #history p,
+            #mission p {
+                font-size: 16px;
+            }
+
+            #about h1,
+            #history h2,
+            #mission h2 {
+                font-size: 30px;
+            }
+        }
+
+        /* ------------------------- |
+   |     Staff Section       |
+   ------------------------- */
+
+        #staff {
+            padding: 50px 20px;
+            background-color: #fff4de;
+            text-align: center;
+        }
+
+        #staff h2 {
+            font-size: 36px;
+            color: #001528;
+            margin-bottom: 20px;
+        }
+
+        #staff p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .staff-photos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 0 auto;
+        }
+
+        .staff-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .staff-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .staff-photos {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .staff-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .staff-img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* ------------------------- |
+   |       Values Section    |
+   ------------------------- */
+
+        #values {
+            padding: 50px 20px;
+            background-color: #fff4de;
+            text-align: center;
+        }
+
+        #values h2 {
+            font-size: 36px;
+            color: #001528;
+            margin-bottom: 20px;
+        }
+
+        #values p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .value-plate {
+            background-color: #e6e9aca9;
+            border-radius: 50%;
+            padding: 30px;
+            width: 250px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .value-plate h3 {
+            font-size: 24px;
+            color: #001528;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .value-plate p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .value-plate:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 
@@ -413,7 +669,8 @@
                 </ul>
             </nav>
             <div class="actions">
-                <img alt="Cart Icon" class="cart-icon-image" loading="lazy" src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d833a6095ee4de20561510_cart-dark.svg"
+                <img alt="Cart Icon" class="cart-icon-image" loading="lazy"
+                    src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d833a6095ee4de20561510_cart-dark.svg"
                     style="width: 30px;" />
                 <a href="#" class="reserve-btn">Reserve table</a>
                 <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d2a4fb038a983ddc80a401_right-arrow.svg"
@@ -421,117 +678,231 @@
             </div>
         </div>
     </header>
-    <!-- continue here -->
-    
-    <section class="socials" data-aos="fade-up" data-aos-duration="1500">
-        <h1>Follow us</h1>
-        <div class="socials-gallery" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
-            <div class="social-item">
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe6f61343c92095b064_insta-img-01.avif"
-                    alt="Instagram" />
-                <div class="social-icon instagram"></div>
-            </div>
-            <div class="social-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe60b3e38902c12f8d8_insta-img-02.avif"
-                    alt="Facebook" />
-                <div class="social-icon facebook"></div>
-            </div>
-            <div class="social-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe665727dfa5570c249_insta-img-03.avif"
-                    alt="Twitter" />
-                <div class="social-icon twitter"></div>
-            </div>
-            <div class="social-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe6eb15144cb3cbd10f_insta-img-04.avif"
-                    alt="Pinterest" />
-                <div class="social-icon pinterest"></div>
-            </div>
-            <div class="social-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
-                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe73afacf1bcad8aeeb_insta-img-06.avif"
-                    alt="Pinterest" />
-                <div class="social-icon youtube"></div>
-            </div>
+    <section id="video-section">
+        <video id="restaurant-video" autoplay muted loop>
+            <source
+                src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6%2F66dac65deb15144cb3b7f9d8_video-bg-transcode.mp4"
+                type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="video-overlay">
+            <div class="video-title">Welcome to Bistrovanti</div>
         </div>
     </section>
 
-    <section class="footer-top">
-        <div class="footer-top-content" style="display: flex; justify-content: space-between; align-items: center;">
-            <div>
-                <h1>It was a memorable</h1>
-                <h2>From farm to table excellence in every bite</h2>
-            </div>
-
-            <div style="flex-grow: 1; text-align: center; ">
-                <form action="#" method="POST"
-                    style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
-                    <input type="email" placeholder="Email address"
-                        style="background-color:  transparent; font-family: Taviraj, sans-serif; padding: 12px 20px; font-size: 16px; border-radius: 30px 0 0 30px; border: 1px solid black; width: 300px; margin-right: 10px; outline: none;"
-                        required>
-                    <button type="submit"
-                        style="background-color: transparent; padding: 12px 30px; font-size: 16px; font-family: Taviraj, sans-serif; border-radius: 0 30px 30px 0; border: 1px solid black; cursor: pointer; transition: background-color 0.3s;">
-                        Subscribe now
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-row">
-            <div class="footer-item" data-aos="fade-up" data-aos-duration="1000">
-                <h3>Address</h3>
-                <p>123 Bistro Lane, Parqal</p>
-                <p>Paranaque, Metro Manila</p>
-                <p>Bestrovanti Restaurant, Philippines</p>
-            </div>
-
-            <div class="footer-item" data-aos="fade-up" data-aos-duration="1000">
-                <h3>Bistrovia opening hours</h3>
-                <p>Breakfast: 7:00AM - 9:00AM</p>
-                <p>Lunch: 12:00PM - 02:00PM</p>
-                <p>Dinner: 7:00PM - 10:00PM</p>
-            </div>
-
-            <div class="footer-item" data-aos="fade-up" data-aos-duration="1000">
-                <h3>Let's connect</h3>
-                <p>(123) 456-7890</p>
-                <p>contact@bistrovanti.com</p>
-            </div>
-
-            <div class="footer-item" data-aos="fade-up" data-aos-duration="1000">
-                <h3>Book a table</h3>
-                <p>Make your reservation for an unforgettable meal!</p>
-                <a href="contact.html" class="more-btn-border" style="border-color: #001528;">
-                    <button class="more-btn reservation-btn">
-                        Reservation
-                        <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d170edb95b798eeea3c007_icon-01.svg"
-                            loading="lazy" alt="Icon" class="inline-btn-icon" style="padding-left: 10px;">
-                    </button>
-                </a>
-            </div>
-        </div>
-        <div class="marquee-container">
-            <marquee behavior="scroll" direction="left">
-                <span class="marquee-text">Best place, Savor the moment, Relish the flavors, &nbsp;</span>
-                <span class="marquee-text">Best place, Savor the moment, Relish the flavors, &nbsp;</span>
-                <span class="marquee-text">Best place, Savor the moment, Relish the flavors, &nbsp;</span>
-                <span class="marquee-text">Best place, Savor the moment, Relish the flavors, &nbsp;</span>
-                <span class="marquee-text">Best place, Savor the moment, Relish the flavors, &nbsp;</span>
-            </marquee>
-        </div>
-    </footer>
-
-    <div
-        style="background-color: #fff4de; color: #001528; text-align: center; font-size: 14px; font-weight: 500; line-height: 24px; padding-bottom: 20px;">
-        <p>Copyright @ 2025 designed by BSCS 3-1N Group 3: Submission for Web Development. All rights
-            reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Changelog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;License
-        </p>
+    <div class="section-choices">
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#history">History</a></li>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#staff">Our Team</a></li>
+            <li><a href="#values">Values</a></li>
+        </ul>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+    <!-- Main Content Section -->
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h1>About Us</h1>
+            <p>Welcome to Bistrovanti! We are a family-owned restaurant dedicated to bringing you delicious, authentic
+                dishes made from the finest ingredients. Located in the heart of the city, we’ve been serving our
+                community since 2025.</p>
+        </section>
+
+        <!-- History Section -->
+        <section id="history">
+            <h2>Our History</h2>
+            <p>Bistrovanti was conceived as a place where culinary artistry meets warmth, encouraging food to bring
+                people together. Fresh, locally procured ingredients are the guiding inspiration behind seasonal flavors
+                that characterize a wide array of painstakingly prepared recipes that pay homage to local farmers'
+                commitment. Bistrovanti enshrines a beautiful yet rustic atmosphere with an open kitchen, welcoming
+                homely intimacy for a romantic dinner, boisterous gathering, or family get-together. Each plate, an
+                homage to the art of cuisine, turns into a celebration of community on every visit, cherishing the
+                essence of good food shared among family and friends.</p>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <p>At Bistrovanti, where culinary excellence meets a warm atmosphere, our menu celebrates fresh, locally
+                sourced ingredients crafted into seasonal dishes. We’re dedicated to creating a space where guests feel
+                at home, enjoying exceptional food and meaningful connections with every bite.</p>
+        </section>
+
+        <!-- Staff Section -->
+        <section id="staff">
+            <h2>Our Team</h2>
+            <p>Meet the wonderful people who make Bistrovanti the place it is today. From our chefs to the servers,
+                everyone at Bistrovanti shares a passion for exceptional food and great service.
+                We are dedicated to crafting memorable dining experiences that indulge the senses and delight the palate
+                explore.
+                Our restaurant blends charm, modern elegance with a passion for Italian cuisine flavors whether you're
+                joining us for a casual lunch or a celebration with friends, our team is committed to your visit is
+                nothing short of exceptional. </p>
+            <div class="staff-photos">
+                <div class="staff-member">
+                    <img src="https://cdn.prod.website-files.com/66d16eb9a8db170b0c9f5809/66e437044ba8c4508c741f8f_team-02.avif"
+                        alt="Founder Szandra" class="staff-img">
+                    <p class="staff-name">Founder Szandra</p>
+                </div>
+                <div class="staff-member">
+                    <img src="https://cdn.prod.website-files.com/6797848f123878ef9b4cebd4/67a1acb7aff260dfaeba1199_Team1.jpg"
+                        alt="Head Chef Derek" class="staff-img">
+                    <p class="staff-name">Head Chef Derek</p>
+                </div>
+                <div class="staff-member">
+                    <img src="https://cdn.prod.website-files.com/6797848f123878ef9b4cebd4/67a1acb82596fd13fe5cd6dd_Team2.jpg"
+                        alt="Sous Chef John" class="staff-img">
+                    <p class="staff-name">Sous Chef John</p>
+                </div>
+                <div class="staff-member">
+                    <img src="https://cdn.prod.website-files.com/6797848f123878ef9b4cebd4/67a1acb71384702917059489_Team3.jpg"
+                        alt="Sous Chef Quia" class="staff-img">
+                    <p class="staff-name">Sous Chef Quia</p>
+                </div>
+                <div class="staff-member">
+                    <img src="https://cdn.prod.website-files.com/6797848f123878ef9b4cebd4/67a1acb73da2e5379f666ab1_Team4.jpg"
+                        alt="Sommelier Kate" class="staff-img">
+                    <p class="staff-name">Sommelier Kate</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section id="values">
+            <h2>Our Values</h2>
+            <p>We pride ourselves on the values that guide our restaurant:</p>
+            <div class="values-container">
+                <div class="value-plate">
+                    <h3>Integrity</h3>
+                    <p>We are committed to being transparent and ethical in every aspect of our business.</p>
+                </div>
+                <div class="value-plate">
+                    <h3>Quality</h3>
+                    <p>We use only the finest ingredients to create dishes that are consistently delicious.</p>
+                </div>
+                <div class="value-plate">
+                    <h3>Community</h3>
+                    <p>We believe in giving back and supporting the local community in every way we can.</p>
+                </div>
+                <div class="value-plate">
+                    <h3>Sustainability</h3>
+                    <p>We aim to minimize our environmental footprint by sourcing locally and using eco-friendly
+                        practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="socials" data-aos="fade-up" data-aos-duration="1500">
+            <h1>Follow us</h1>
+            <div class="socials-gallery" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                <div class="social-item">
+                    <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe6f61343c92095b064_insta-img-01.avif"
+                        alt="Instagram" />
+                    <div class="social-icon instagram"></div>
+                </div>
+                <div class="social-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                    <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe60b3e38902c12f8d8_insta-img-02.avif"
+                        alt="Facebook" />
+                    <div class="social-icon facebook"></div>
+                </div>
+                <div class="social-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                    <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe665727dfa5570c249_insta-img-03.avif"
+                        alt="Twitter" />
+                    <div class="social-icon twitter"></div>
+                </div>
+                <div class="social-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                    <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe6eb15144cb3cbd10f_insta-img-04.avif"
+                        alt="Pinterest" />
+                    <div class="social-icon pinterest"></div>
+                </div>
+                <div class="social-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                    <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66dadbe73afacf1bcad8aeeb_insta-img-06.avif"
+                        alt="Pinterest" />
+                    <div class="social-icon youtube"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-top">
+            <div class="footer-top-content" style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h1 style="color: #001528;">It was a memorable</h1>
+                    <h2 style="color: #001528;">From farm to table excellence in every bite</h2>
+                </div>
+
+                <div style="flex-grow: 1; text-align: center; ">
+                    <form action="#" method="POST"
+                        style="display: flex; justify-content: center; align-items: center; margin-top: 20px;">
+                        <input type="email" placeholder="Email address"
+                            style="background-color:  transparent; font-family: Taviraj, sans-serif; padding: 12px 20px; font-size: 16px; border-radius: 30px 0 0 30px; border: 1px solid black; width: 300px; margin-right: 10px; outline: none;"
+                            required>
+                        <button type="submit"
+                            style="background-color: transparent; padding: 12px 30px; font-size: 16px; font-family: Taviraj, sans-serif; border-radius: 0 30px 30px 0; border: 1px solid black; cursor: pointer; transition: background-color 0.3s;">
+                            Subscribe now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-row">
+                <div class="footer-item" data-aos="fade-up" data-aos-duration="1000">
+                    <h3>Address</h3>
+                    <p>123 Bistro Lane, Parqal</p>
+                    <p>Paranaque, Metro Manila</p>
+                    <p>Bestrovanti Restaurant, Philippines</p>
+                </div>
+
+                <div class="footer-item" data-aos="fade-up" data-aos-duration="1000">
+                    <h3>Bistrovia opening hours</h3>
+                    <p>Breakfast: 7:00AM - 9:00AM</p>
+                    <p>Lunch: 12:00PM - 02:00PM</p>
+                    <p>Dinner: 7:00PM - 10:00PM</p>
+                </div>
+
+                <div class="footer-item" data-aos="fade-up" data-aos-duration="1000">
+                    <h3>Let's connect</h3>
+                    <p>(123) 456-7890</p>
+                    <p>contact@bistrovanti.com</p>
+                </div>
+
+                <div class="footer-item" data-aos="fade-up" data-aos-duration="1000">
+                    <h3>Book a table</h3>
+                    <p>Make your reservation for an unforgettable meal!</p>
+                    <a href="contact.html" class="more-btn-border" style="border-color: #001528;">
+                        <button class="more-btn reservation-btn">
+                            Reservation
+                            <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d170edb95b798eeea3c007_icon-01.svg"
+                                loading="lazy" alt="Icon" class="inline-btn-icon" style="padding-left: 10px;">
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="marquee-container">
+                <marquee behavior="scroll" direction="left">
+                    <span class="marquee-text">Best place, Savor the moment, Relish the flavors, &nbsp;</span>
+                    <span class="marquee-text">Best place, Savor the moment, Relish the flavors, &nbsp;</span>
+                    <span class="marquee-text">Best place, Savor the moment, Relish the flavors, &nbsp;</span>
+                    <span class="marquee-text">Best place, Savor the moment, Relish the flavors, &nbsp;</span>
+                    <span class="marquee-text">Best place, Savor the moment, Relish the flavors, &nbsp;</span>
+                </marquee>
+            </div>
+        </footer>
+
+        <div
+            style="background-color: #fff4de; color: #001528; text-align: center; font-size: 14px; font-weight: 500; line-height: 24px; padding-bottom: 20px;">
+            <p>Copyright @ 2025 designed by BSCS 3-1N Group 3: Submission for Web Development. All rights
+                reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Changelog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;License
+            </p>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
 </body>
 
 <script>
