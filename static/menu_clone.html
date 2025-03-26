@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistrovanti by Group 3: Main Menu</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="/static/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+
+    <style>
+
+        body {
+            font-family: Taviraj, sans-serif;
+            background-color: #001528;
+            color: #fff4de;
+        }
+
+        @font-face {
+            font-family: 'Edensor Free';
+            src: url('static/font/Edensor-FREE.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* -------------------------
+           |       Menu Page       |
+           ------------------------- */
+
+        /* Header Section */
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #f8d9a0;
+            margin-bottom: -10px;
+        }
+
+        .logo img {
+            width: 170px;
+        }
+
+        .nav-border-top {
+            margin-top: 0;
+            width: 97%;
+            border-top: 1px solid #fff4de;
+            margin: 5px 0;
+        }
+
+        .nav-border-bottom {
+            width: 100%;
+            border-top: 1px solid #fff4de;
+            margin: 0;
+        }
+
+        .nav-actions-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+
+        nav ul {
+            padding: 20px;
+            list-style: none;
+            display: flex;
+            gap: 60px;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 25px;
+            color: #fff4de;
+            padding: 10px;
+            padding-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                z-index: 1;
+                display: none;
+                width: 100%;
+                background-color: #1b2d1f;
+                position: absolute;
+                top: 25%;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                gap: 20px;
+                align-items: center;
+                flex-direction: row;
+                visibility: hidden;
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                border-top: 2px solid #f8d9a0;
+                border-radius: 10px;
+                background: linear-gradient(135deg, #1b2d1f 0%, #2a3d2f 100%);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+                margin-bottom: 120px;
+            }
+
+            .nav-links.show {
+                visibility: visible;
+                opacity: 1;
+                display: flex;
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                font-size: 18px;
+                color: #f8d9a0;
+                text-decoration: none;
+                border-radius: 50px;
+                padding: 15px 25px;
+                width: 90%;
+                text-align: center;
+                background-color: #1b2d1f;
+                border-bottom: 1px solid #f8d9a0;
+                transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+                font-weight: 500;
+            }
+
+            .nav-links a:hover {
+                transform: scale(1.05);
+                border-left: 3px solid #f8d9a0;
+                padding-left: 20px;
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+        }
+
+        nav ul li a,
+        .actions a {
+            text-decoration: none;
+            color: #fff4de;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 30px;
+        }
+
+        nav ul li a:hover {
+            color: #f8d9a0;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        .reserve-btn {
+            text-decoration: none;
+            color: #fff4de;
+            font-size: 25px;
+            border-left: 1px solid #fff4de;
+            padding-left: 20px;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            padding-bottom: 0px;
+        }
+
+        .hero h1 {
+            font-family: "Edensor Free", sans-serif;
+            font-weight: 400;
+            font-size: 100px;
+            line-height: 100px;
+            text-transform: uppercase;
+            color: #ffd99f;
+            letter-spacing: 2px;
+            transition: transform 0.5s ease;
+            margin-top: -40px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 50px 0;
+            margin: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: calc(20% - 16px);
+            height: auto;
+            border-top-left-radius: 200px;
+            border-top-right-radius: 200px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(100px);
+            animation: fadeInFromDown 0.8s ease-in-out forwards;
+            animation-delay: var(--delay);
+        }
+
+        @keyframes fadeInFromDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery-item:nth-child(1) {
+            --delay: 0.1s;
+        }
+
+        .gallery-item:nth-child(2) {
+            --delay: 0.3s;
+        }
+
+        .gallery-item:nth-child(3) {
+            --delay: 0.5s;
+        }
+
+        .gallery-item:nth-child(4) {
+            --delay: 0.7s;
+        }
+
+        .gallery-item:nth-child(5) {
+            --delay: 0.9s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-item.first-item {
+                border-top-left-radius: 0px;
+            }
+
+            .gallery-item.last-item {
+                border-top-right-radius: 0px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: calc(50% - 16px);
+            }
+        }
+
+        .gallery-item:hover img {
+            filter: blur(2px);
+            opacity: 0.65;
+        }
+
+        .gallery-item:hover .dish-name {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .dish-name {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.5);
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+         /* Menu Section */
+         .mainmenu {
+            background-color: #6c5a35;
+            padding: 80px 20px;
+            font-size: 25px;
+            text-align: center;
+        }
+         
+         
+    </style> 
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="static/images/logo.png" alt="Bistrovanti Logo" width="150">
+        </div>
+        <div class="nav-border-top"></div>
+        <div class="nav-border-bottom"></div>
+        <div class="nav-actions-wrapper">
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="actions">
+                <img alt="Cart Icon" class="cart-icon-image" loading="lazy" src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d16fced8e32e0b2760e5fc_cart.svg"
+                    style="width: 30px;" />
+                <a href="#" class="reserve-btn">Reserve table</a>
+                <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d2a4fb038a983ddc80a401_right-arrow.svg"
+                    loading="lazy" alt="Icon" class="inline-btn-icon">
+            </div>
+        </div>
+    </header>
+    <!-- Title Start -->
+    <section class="hero">
+        <h1>Taste the tradition enjoy with the innovation</h1>
+    </section>
+    <!-- Title End -->
+
+    <!-- Gallery Start -->
+    <section id="meal_gallery">
+    <div class="gallery">
+        <a href="#menu_breakfast" class="gallery-item first-item">
+            <img src="Italian_Breakfast.png" alt="Breakfast">
+            <div class="dish-name">Breakfast</div>
+        </a>
+        <a href="#menu_lunch" class="gallery-item">
+            <img src="Italian_Lunch.png" alt="Lunch">
+            <div class="dish-name">Lunch</div>
+        </a>
+        <a href="#menu_dinner" class="gallery-item">
+            <img src="Italian_Dinner.png" alt="Dinner">
+            <div class="dish-name">Dinner</div>
+        </a>
+        <a href="#menu_dessert" class="gallery-item">
+            <img src="Italian Dessert.png" alt="Dessert">
+            <div class="dish-name">Dessert</div>
+        </a>
+        <a href="#menu_drinks" class="gallery-item last-item">
+            <img src="Italian_Drinks.png" alt="Drinks">
+            <div class="dish-name">Drinks</div>
+        </a>
+    </div>
+    </section>
+
+    <!-- Gallery End -->
+
+    
+    <!-- Menu Start -->
+    <section id="menu_breakfast">
+        <div class="mainmenu">
+            <h2>Breakfast</h2>
+        </div>
+    </section>
+
+    <section id="menu_lunch">
+        <div class="mainmenu">
+            <h2>Lunch</h2>
+        </div>
+    </section>
+
+    <section id="menu_dinner">
+        <div class="mainmenu">
+            <h2>Dinner</h2>
+        </div>
+    </section>
+
+    <section id="menu_dessert">
+        <div class="mainmenu">
+            <h2>Dessert</h2>
+        </div>
+    </section>
+
+    <section id="menu_drinks">
+        <div class="mainmenu">
+            <h2>Drinks</h2>
+        </div>
+    </section>
+
+</body>
+
+
+
+<script>
+    const heroText = document.querySelector('.hero h1');
+
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX;
+
+        const windowWidth = window.innerWidth;
+
+        const moveAmount = (mouseX / windowWidth) * 50 - 25;
+
+        heroText.style.transform = `translateX(${moveAmount}px)`;
+    });
+
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('show');
+    }
+
+
+</script>
+
+</html>
