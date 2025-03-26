@@ -650,20 +650,25 @@
 </script>
 
 <script>
-    const heroText = document.querySelector('.hero h1');
-
     document.addEventListener('mousemove', (e) => {
         const mouseX = e.clientX;
         const windowWidth = window.innerWidth;
         const moveAmount = (mouseX / windowWidth) * 50 - 25;
-        heroText.style.transform = `translateX(${moveAmount}px)`;
+
+        // Move all h2 elements inside .menu-category
+        document.querySelectorAll('.menu-category h2').forEach((h2) => {
+            h2.style.transform = `translateX(${moveAmount}px)`;
+        });
+
+        // Move the hero text as well
+        document.querySelector('.hero h1').style.transform = `translateX(${moveAmount}px)`;
     });
 
     function toggleMenu() {
         const navLinks = document.querySelector('.nav-links');
         navLinks.classList.toggle('show');
     }
-
 </script>
+
 </body>
 </html>
