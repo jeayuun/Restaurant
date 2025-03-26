@@ -16,7 +16,7 @@
         body {
             font-family: Taviraj, sans-serif;
             background-color: #001528;
-            color: #fff4de;
+            color: #6c5a35;
         }
 
         @font-face {
@@ -296,16 +296,17 @@
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-         /* Menu Section  Start*/
+         /* Menu Section Start */
          #menu{
-            background-color: #6c5a35;
+            background-color: #fff4de;
             text-align: center;
+            col;
          }
 
          .menu_heading {
             padding: 30px 30px;
             margin: 30px 30px;
-            font-size: 25px;
+            font-size: 50px;
             text-align: center;
             width: 100%;
         }
@@ -322,7 +323,7 @@
         .menu_item{
             display: flex;
             align-items: center;
-            background: #6c5a35;
+            background: #fff4de;
             padding: 15px;
             border-radius: 8px;
             width: 30%;
@@ -330,11 +331,23 @@
         }
 
         .menu_item img {
-            width: 80px;
-            height: 80px;
+            width: 200px;
+            height: auto;
             border-radius: 8px;
             object-fit: cover;
             margin-right: 15px;
+        }
+
+        @media (min-width: 480px) {
+            .menu_item img{
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .menu_item img{
+                width: calc(70% - 20px);
+            }
         }
 
         .menu_info {
@@ -351,7 +364,7 @@
         .menu_info p {
             margin: 5px 0;
             font-size: 0.9em;
-            color: #f3f1f1;
+            color: #6c5a35;
         }
 
         .price {
@@ -359,6 +372,7 @@
             font-size: 1.2em;
             color: #1a1a1a;
         }
+
          /* Menu Section End */
     </style> 
 
@@ -489,54 +503,54 @@
         <div class="menu_container"id="menu_lunch">
             <h2 class="menu_heading" >Lunch</h2>
             <div class="menu_item">
-                <img >
+                <img src="Sushi_Rolls.png" alt="Sushi Rolls with sauce">
                 <div class="menu_info">
-                    <h2> Sample 1</h2>
+                    <h2> Sushi rolls & sauce</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
                 </div>
                 <span class="price">  Set PHP </span>
             </div>
 
             <div class="menu_item">
-                <img >
+                <img src="Grilled_Chicken.png" alt="Grilled Chicken rice meal">
                 <div class="menu_info">
-                    <h2> Sample 2</h2>
+                    <h2> Grilled chicken with rice</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
                 </div>
                 <span class="price">  Set PHP </span>
             </div>
 
             <div class="menu_item">
-                <img >
+                <img src="Vietnamese_Soup.png" alt="Vietnamese Soup Dish">
                 <div class="menu_info">
-                    <h2> Sample 3</h2>
+                    <h2> Vietnamese food soup</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
                 </div>
                 <span class="price">  Set PHP </span>
             </div>
 
             <div class="menu_item">
-                <img >
+                <img src="Lavash_Grilled.png" alt="A Grilled Lavash (FlatBread)">
                 <div class="menu_info">
-                    <h2> Sample 4</h2>
+                    <h2> Lavash grilled </h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
                 </div>
                 <span class="price">  Set PHP </span>
             </div>
 
             <div class="menu_item">
-                <img >
+                <img src="Mexican_Meal.png" alt="A Mexican Dish">
                 <div class="menu_info">
-                    <h2> Sample 5</h2>
+                    <h2> Mexican meal </h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
                 </div>
                 <span class="price">  Set PHP </span>
             </div>
 
             <div class="menu_item">
-                <img >
+                <img src="Pide_laucum.png" alt="2 plates of Pide Lahmacun">
                 <div class="menu_info">
-                    <h2> Sample 6</h2>
+                    <h2> Pide lahmacun </h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
                 </div>
                 <span class="price">  Set PHP </span>
@@ -600,7 +614,7 @@
             </div>
         </div>
 
-        <div class="menu_container"id="menu_Dessert">
+        <div class="menu_container"id="menu_dessert">
             <h2 class="menu_heading" >Dessert</h2>
             <div class="menu_item">
                 <img >
@@ -687,7 +701,7 @@
             </div>
 
             <div class="menu_item">
-                <img >
+                <img>
                 <div class="menu_info">
                     <h2> Sample 4</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
