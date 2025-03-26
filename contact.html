@@ -207,6 +207,76 @@
             max-width: 100%;
             display: inline-block;
         }
+        
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between; 
+            align-items: flex-start;
+            max-width: 90%;
+            margin: 40px auto;
+            gap: 20px;
+        }
+        
+        .contact-form {
+            flex: 1; 
+            max-width: 48%;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            background-color: #001528;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #000000;
+        }
+
+        .map-container {
+            flex: 1; 
+            max-width: 48%;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+        
+        /* Responsive Design - Stack items on small screens */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .contact-form,
+            .map-container {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -249,6 +319,41 @@
     </section>
 
     <!-- continue here -->
+    <section>
+        <div class="contact-info">
+        <p><strong>Address:</strong> 123 Bistro Lane, Parqal</p>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+        <p><strong>Email:</strong> contact@bistrovanti.com</p>
+        <p><strong>Hours of Operation:</strong></p>
+        <p>Monday - Friday: 9:00 AM - 9:00 PM</p>
+        <p>Saturday - Sunday: 9:00 AM - 10:00 PM</p>
+    </div>
+
+<div class="contact-container">
+    <div class="contact-form">
+        <h2>Get in Touch</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <div class="map-container">
+        <h2></h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15449.03072848018!2d120.97127468997128!3d14.527247750576583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a4e29ceb4f%3A0xd617dd0f3dfc499e!2sParqal!5e0!3m2!1sen!2sph!4v1742965522872!5m2!1sen!2sph"
+            allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
+    </section>
 
 </body>
 
