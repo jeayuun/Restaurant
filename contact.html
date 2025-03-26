@@ -213,59 +213,89 @@
         }
         
         .contact-info {
-            text-align: center;
-            margin: 20px 0;
+            width: 75%;
+            font-size: 16px;
+        }
+
+        .contact-info h3 {
+            font-weight: bold;
+            font-size: 16px;
         }
 
         .contact-container {
             display: flex;
-            justify-content: space-between; 
-            align-items: flex-start;
-            max-width: 90%;
-            margin: 40px auto;
-            gap: 20px;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 60px;
         }
         
         .contact-form {
-            flex: 1; 
-            max-width: 48%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form h2 {
+            font-size: 20px;
+            margin-bottom: 30px;
         }
 
         .contact-form label {
-            display: block;
+            display: flex;
             margin-bottom: 5px;
+            font-size: 16px;
         }
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            border: 1px solid black;
+            border-radius: 20px;
+            font-size: 16px;
+            background-color: transparent;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-family: Taviraj, sans-serif;
         }
 
         .contact-form button {
             background-color: #001528;
             color: #fff;
-            padding: 10px 15px;
+            padding: 10px 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 30px;
             cursor: pointer;
+            font-size: 14px;
+            display: block;
+            margin: auto;
+            font-family: Taviraj, sans-serif;
         }
 
         .contact-form button:hover {
-            background-color: #1b2d1f;
+            background-color: #0a2844;
         }
 
         .map-container {
+            margin-top: 30px;
             flex: 1; 
-            max-width: 48%;
         }
         
         iframe {
-            width: 100%;
-            height: 400px;
+            width: 70%;
+            height: 300px;
             border: 0;
         }
         
@@ -538,37 +568,44 @@
 
     <!-- continue here -->
     <section>
-        <div class="contact-info">
-        <p><strong>Address:</strong> 123 Bistro Lane, Parqal</p>
-        <p><strong>Phone:</strong> (123) 456-7890</p>
-        <p><strong>Email:</strong> contact@bistrovanti.com</p>
-        <p><strong>Hours of Operation:</strong></p>
-        <p>Monday - Friday: 9:00 AM - 9:00 PM</p>
-        <p>Saturday - Sunday: 9:00 AM - 10:00 PM</p>
-    </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Bistrovanti time <span style="font-weight: normal;">(Breakfast, Lunch, Dinner)</span></h3>
+                <p>Monday to Sunday <br> 7:00am - 10:00pm</p>
+                <br>
+                <h3>Book a table</h3>
+                <p>(123) 456-7890 <br> contact@bistrovanti.com</p>
+                <br>
+                <h3>Restaurant address</h3>
+                <p>123 Bistro Lane, Parqal, <br> Paranaque, Metro Manila, Philippines</p>
 
-<div class="contact-container">
-    <div class="contact-form">
-        <h2>Get in Touch</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-
-    <div class="map-container">
-        <h2></h2>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15449.03072848018!2d120.97127468997128!3d14.527247750576583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a4e29ceb4f%3A0xd617dd0f3dfc499e!2sParqal!5e0!3m2!1sen!2sph!4v1742965522872!5m2!1sen!2sph"
-            allowfullscreen="" loading="lazy"></iframe>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15449.03072848018!2d120.97127468997128!3d14.527247750576583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a4e29ceb4f%3A0xd617dd0f3dfc499e!2sParqal!5e0!3m2!1sen!2sph!4v1742965522872!5m2!1sen!2sph"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+        </div>
+    
+        <div class="contact-form">
+            <h2>We value your feedback and inquiries. Please feel free to get in touch with us using the following contact information:</h2>
+            <div class="row">
+                <label for="first-name">First name (required)</label>
+                <input type="text" id="first-name" required>
+                
+                <label for="last-name">Last name (required)</label>
+                <input type="text" id="last-name" required>
+            </div>
+            <div class="row">
+                <label for="email">Email Address</label>
+                <input type="email" id="email">
+                
+                <label for="phone">Phone number (required)</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <label for="message">Message (required)</label>
+            <textarea id="message" rows="4" required></textarea>
+            <button type="submit">Submit now</button>
+        </div>
     </div>
 </div>
     </section>
