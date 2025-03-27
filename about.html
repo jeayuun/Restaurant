@@ -25,6 +25,13 @@
             overflow-x: hidden;
         }
 
+        @font-face {
+            font-family: 'Edensor Free';
+            src: url('static/font/Edensor-FREE.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         /* -------------------------
            |       About Page       |
            ------------------------- */
@@ -179,6 +186,74 @@
             border-left: 1px solid #001528;
             padding-left: 20px;
         }
+
+    /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            padding-bottom: 0px;
+            background-color: #fff4de; 
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: "Edensor Free", sans-serif; 
+            font-size: 136px;
+            font-weight: 400;
+            line-height: 136px;
+            text-transform: uppercase;
+            color: #001528;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease; 
+            margin-top: -40px;
+            display: inline-block;  
+        }
+
+        .hero h1:hover {
+            transform: translateX(-10px); 
+        }
+
+        .hero p {
+            font-family: "Edensor Free", sans-serif; 
+            font-size: 20px;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .btn-hero {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #001528;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: Taviraj, sans-serif;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-hero:hover {
+            background-color: #0a2844;
+        }
+
+
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 48px; 
+            line-height: 48px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .btn-hero {
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+    }
 
         /* Socials Section */
         .socials {
@@ -406,9 +481,6 @@
         }
 
 
-
-
-
         /* Restaurant Interior Video Section */
         #video-section {
             position: relative;
@@ -430,7 +502,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: 1b2d1f;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -439,13 +511,13 @@
         .video-title {
             font-size: 48px;
             font-weight: bold;
-            color: #fff;
+            color: #f0f3ee;
             text-align: center;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .section-choices {
-            background-color: #333;
+            background-color: #fff4de;
             padding: 20px;
             text-align: center;
         }
@@ -459,11 +531,11 @@
         }
 
         .section-choices ul li {
-            margin: 0 30px;
+            margin: 0 60px;
         }
 
         .section-choices ul li a {
-            color: #fff;
+            color: #1b2d1f;
             text-decoration: none;
             font-size: 18px;
             font-weight: 500;
@@ -471,7 +543,7 @@
         }
 
         .section-choices ul li a:hover {
-            color: #f8d9a0;
+            color: #f7a102;
         }
 
         /* Section Content */
@@ -492,172 +564,247 @@
             color: #fff4de;
         }
 
-        /* ------------------------- |
-   |     About, History, and Mission Sections     |
-   ------------------------- */
 
-        #about,
-        #history,
+      /* ------------------------- |
+    | About, History, and Mission Sections|
+      ------------------------- */
+
+        #about, 
+        #history, 
         #mission {
             padding: 50px 20px;
             text-align: center;
             color: #333;
+            position: relative; 
+            opacity: 0;
+            transform: translateY(100px);
+            animation: fadeInFromDown 1s ease-in-out forwards;
+            animation-delay: var(--delay);
+            }
+
+
+         @keyframes fadeInFromDown {
+         0% {
+             opacity: 0;
+             transform: translateY(100px); 
+           }
+         100% {
+             opacity: 1;
+             transform: translateY(0); 
+          }
         }
 
-        #about h1,
-        #history h2,
+        #about {
+            --delay: 0.8s;
+        }
+
+        #history {
+            --delay: 1s;
+        }
+
+        #mission {
+            --delay: 2s;
+        }
+
+        #about h1, 
+        #history h2, 
         #mission h2 {
             font-size: 36px;
             color: #001528;
             margin-bottom: 20px;
         }
 
-        #about p,
-        #history p,
+        #about p, 
+        #history p, 
         #mission p {
             font-size: 18px;
             color: #333;
             margin-bottom: 40px;
         }
 
-        @media (max-width: 768px) {
+        #about::before,
+        #about::after, 
+        #history::before, 
+        #mission::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: -1; 
+        }
 
-            #about p,
-            #history p,
+
+        #about::before {
+            top: -15px; 
+            border-top: 6px solid #1b2d1f; 
+        }
+
+        #history::before {
+            top: -25px; 
+            border-top: 6px solid #1b2d1f; 
+        }
+
+        #mission::before {
+            top: -25px; 
+            border-top: 6px solid #1b2d1f; 
+        }
+
+        #mission::after {
+            top: -15px; 
+            border-top: 6px solid #1b2d1f; 
+        }
+
+        @media (max-width: 768px) {
+            #about p, 
+            #history p, 
             #mission p {
                 font-size: 16px;
             }
 
-            #about h1,
-            #history h2,
+            #about h1, 
+            #history h2, 
             #mission h2 {
                 font-size: 30px;
             }
         }
 
+
         /* ------------------------- |
-   |     Staff Section       |
-   ------------------------- */
+        |     Staff Section       |
+        ------------------------- */
 
-        #staff {
-            padding: 50px 20px;
-            background-color: #fff4de;
-            text-align: center;
-        }
+            #staff {
+                padding: 50px 20px;
+                background-color: #1b2d1f; 
+                text-align: center;
+            }
 
-        #staff h2 {
-            font-size: 36px;
-            color: #001528;
-            margin-bottom: 20px;
-        }
+            #staff h2 {
+                font-size: 36px;
+                color: #fff4de; 
+                margin-bottom: 20px;
+            }
 
-        #staff p {
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 40px;
-        }
+            #staff p {
+                font-size: 18px;
+                color: #fff4de; 
+                margin-bottom: 40px;
+            }
 
-        .staff-photos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin: 0 auto;
-        }
-
-        .staff-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .staff-img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 768px) {
             .staff-photos {
-                flex-direction: column;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
                 align-items: center;
+                gap: 20px;
+                margin: 0 auto;
             }
 
             .staff-img {
-                width: 150px;
-                height: 150px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                object-fit: cover;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
-        }
 
-        @media (max-width: 480px) {
-            .staff-img {
-                width: 120px;
-                height: 120px;
+            .staff-img:hover {
+                transform: scale(1.1);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
             }
-        }
+
+            @media (max-width: 768px) {
+                .staff-photos {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .staff-img {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .staff-img {
+                    width: 120px;
+                    height: 120px;
+                }
+            }
 
         /* ------------------------- |
    |       Values Section    |
    ------------------------- */
 
-        #values {
-            padding: 50px 20px;
-            background-color: #fff4de;
-            text-align: center;
-        }
+            #values { 
+                padding: 50px 20px;
+                background-color: #fff4de;
+                text-align: center;
+            }
 
-        #values h2 {
-            font-size: 36px;
-            color: #001528;
-            margin-bottom: 20px;
-        }
+            #values h2 {
+                font-size: 36px;
+                color: #1b2d1f;
+                margin-bottom: 20px;
+            }
 
-        #values p {
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 40px;
-        }
+            #values h3 {
+                font-size: 18px;
+                color: #1b2d1f;
+                margin-bottom: 20px;
+            }
 
-        .values-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            justify-items: center;
-        }
+            #values p {
+                font-size: 18px;
+                color: #fff4de;
+                margin-bottom: 40px;
+            }
 
-        .value-plate {
-            background-color: #e6e9aca9;
-            border-radius: 50%;
-            padding: 30px;
-            width: 250px;
-            height: 250px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+            #values h4 {
+                font-size: 24px;
+                color: #fff4de;
+                margin-bottom: 10px;
+            }
 
-        .value-plate h3 {
-            font-size: 24px;
-            color: #001528;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
+            .values-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                justify-items: center;
+            }
 
-        .value-plate p {
-            font-size: 16px;
-            color: #555;
-        }
+            .value-plate {
+                background-color: #1b2d1f;
+                border-radius: 10px;
+                padding: 30px;
+                width: 250px;
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
 
-        .value-plate:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-        }
+            .value-plate h3 {
+                font-size: 24px;
+                color: #fff4de;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+
+            .value-plate p {
+                font-size: 16px;
+                color: #fff4de;
+            }
+
+            .value-plate:hover {
+                transform: scale(1.05);
+                box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+            }
+
     </style>
 </head>
 
@@ -689,6 +836,15 @@
             </div>
         </div>
     </header>
+
+    
+    <section class="hero">
+        <h1>Learn More About Us</h1>
+        <p>We are passionate about delivering the best experience. Get to know who we are and what drives us forward.</p>
+        <a href="#about" class="btn-hero">Learn More</a>
+    </section>
+    
+    
     <section id="video-section">
         <video id="restaurant-video" autoplay muted loop>
             <source
@@ -783,22 +939,22 @@
         <!-- Values Section -->
         <section id="values">
             <h2>Our Values</h2>
-            <p>We pride ourselves on the values that guide our restaurant:</p>
+            <h3>We pride ourselves on the values that guide our restaurant:</h3>
             <div class="values-container">
                 <div class="value-plate">
-                    <h3>Integrity</h3>
+                    <h4>Integrity</h4>
                     <p>We are committed to being transparent and ethical in every aspect of our business.</p>
                 </div>
                 <div class="value-plate">
-                    <h3>Quality</h3>
+                    <h4>Quality</h4>
                     <p>We use only the finest ingredients to create dishes that are consistently delicious.</p>
                 </div>
                 <div class="value-plate">
-                    <h3>Community</h3>
+                    <h4>Community</h4>
                     <p>We believe in giving back and supporting the local community in every way we can.</p>
                 </div>
                 <div class="value-plate">
-                    <h3>Sustainability</h3>
+                    <h4>Sustainability</h4>
                     <p>We aim to minimize our environmental footprint by sourcing locally and using eco-friendly
                         practices.</p>
                 </div>
