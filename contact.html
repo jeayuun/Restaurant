@@ -588,6 +588,7 @@
     
         <div class="contact-form">
             <h2>We value your feedback and inquiries. Please feel free to get in touch with us using the following contact information:</h2>
+            <form id="contactForm" onsubmit="return validateForm()">
             <div class="row">
                 <label for="first-name">First name (required)</label>
                 <input type="text" id="first-name" required>
@@ -605,6 +606,7 @@
             <label for="message">Message (required)</label>
             <textarea id="message" rows="4" required></textarea>
             <button type="submit">Submit now</button>
+        </form>
         </div>
     </div>
 </div>
@@ -737,6 +739,20 @@
     function toggleMenu() {
         const navLinks = document.querySelector('.nav-links');
         navLinks.classList.toggle('show');
+    }
+
+    function validateForm() {
+        const firstName = document.getElementById('first-name').value.trim();
+        const lastName = document.getElementById('last-name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!firstName || !lastName || !phone || !message) {
+            alert("Please fill in all required fields.");
+            return false;
+        }
+
+        return true;
     }
 
 </script>
