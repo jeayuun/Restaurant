@@ -88,8 +88,6 @@
             gap: 60px;
         }
 
-
-
         .hamburger {
             display: none;
             cursor: pointer;
@@ -204,6 +202,255 @@
             letter-spacing: 2px;
             transition: transform 0.5s ease;
             margin-top: -40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 35px;
+            padding: 40px 50px 0;
+            height: auto;
+            max-height: none;
+            margin-bottom: 0;
+            margin-top: -20px;
+        }
+
+        @keyframes slideUpGallery {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            width: 100%;
+            padding-top: 60%;
+            position: relative;
+            opacity: 0;
+            animation: itemSlideUp 0.6s ease-out forwards;
+        }
+
+        @keyframes itemSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery-item {
+            animation-delay: calc(var(--base-delay, 0.1s) * var(--delay-multiplier, 1));
+        }
+
+        .gallery-item:nth-child(1) {
+            --delay-multiplier: 3;
+        }
+
+        .gallery-item:nth-child(2) {
+            --delay-multiplier: 6;
+        }
+
+        .gallery-item:nth-child(3) {
+            --delay-multiplier: 2;
+        }
+
+        .gallery-item:nth-child(4) {
+            --delay-multiplier: 4;
+        }
+
+        .gallery-item:nth-child(5) {
+            --delay-multiplier: 5;
+        }
+
+        .gallery-item:nth-child(6) {
+            --delay-multiplier: 6;
+        }
+
+        .gallery-item:nth-child(7) {
+            --delay-multiplier: 7;
+        }
+
+        .gallery-item:nth-child(8) {
+            --delay-multiplier: 8;
+        }
+
+        .gallery-item-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-column: 1 / span 3;
+            grid-row: 1;
+        }
+
+        .gallery-item:nth-child(2) {
+            grid-column: 4 / span 3;
+            grid-row: 1;
+        }
+
+        .gallery-item:nth-child(3) {
+            grid-column: 1 / span 2;
+            grid-row: 2;
+        }
+
+        .gallery-item:nth-child(4) {
+            grid-column: 3 / span 2;
+            grid-row: 2;
+        }
+
+        .gallery-item:nth-child(5) {
+            grid-column: 5 / span 2;
+            grid-row: 2;
+        }
+
+        .gallery-item:nth-child(6) {
+            grid-column: 1 / span 2;
+            grid-row: 3;
+        }
+
+        .gallery-item:nth-child(7) {
+            grid-column: 3 / span 2;
+            grid-row: 3;
+        }
+
+        .gallery-item:nth-child(8) {
+            grid-column: 5 / span 2;
+            grid-row: 3;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: 0.4s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            height: 60px;
+        }
+
+        .gallery-overlay-text {
+            color: #f8d9a0;
+            font-size: 16px;
+            text-align: center;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay-text {
+            opacity: 1;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.035);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            z-index: 20;
+        }
+
+        @media (max-width: 1200px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+                height: auto;
+                gap: 20px;
+                padding: 40px 50px 20px;
+            }
+
+            .gallery-item:nth-child(1) {
+                grid-column: 1 / span 4;
+                grid-row: 1 / span 2;
+            }
+
+            .gallery-item:nth-child(2) {
+                grid-column: 1 / span 2;
+                grid-row: 3;
+            }
+
+            .gallery-item:nth-child(3) {
+                grid-column: 3 / span 2;
+                grid-row: 3;
+            }
+
+            .gallery-item:nth-child(4) {
+                grid-column: 1 / span 2;
+                grid-row: 4;
+            }
+
+            .gallery-item:nth-child(5) {
+                grid-column: 3 / span 2;
+                grid-row: 4;
+            }
+
+            .gallery-item:nth-child(6) {
+                grid-column: 1 / span 2;
+                grid-row: 5;
+            }
+
+            .gallery-item:nth-child(7) {
+                grid-column: 3 / span 2;
+                grid-row: 5;
+            }
+
+            .gallery-item:nth-child(8) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .gallery-item {
+                grid-column: 1 !important;
+                grid-row: auto !important;
+            }
         }
 
 
@@ -363,321 +610,95 @@
     </header>
     <section class="gallery">
         <h2>our gallery</h2>
-        <!-- continue here -->
-
-        <style>
-            .gallery-grid {
-                display: grid;
-                grid-template-columns: repeat(6, 1fr);
-                grid-template-rows: repeat(3, 1fr); 
-                gap: 35px; 
-                padding: 40px 50px 0;
-                height: auto;
-                max-height: none;
-                margin-bottom: 0;
-                margin-top: -20px;
-            }
-        
-            @keyframes slideUpGallery {
-                from {
-                    opacity: 0;
-                    transform: translateY(50px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        
-            .gallery-item {
-                position: relative;
-                overflow: hidden;
-                border-radius: 20px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                width: 100%;
-                padding-top: 60%;
-                position: relative;
-                opacity: 0;
-                animation: itemSlideUp 0.6s ease-out forwards;
-            }
-        
-            @keyframes itemSlideUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(30px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        
-            .gallery-item {
-                animation-delay: calc(var(--base-delay, 0.1s) * var(--delay-multiplier, 1));
-            }
-
-            .gallery-item:nth-child(1) { --delay-multiplier: 3; }
-            .gallery-item:nth-child(2) { --delay-multiplier: 6; }
-            .gallery-item:nth-child(3) { --delay-multiplier: 2; }
-            .gallery-item:nth-child(4) { --delay-multiplier: 4; }
-            .gallery-item:nth-child(5) { --delay-multiplier: 5; }
-            .gallery-item:nth-child(6) { --delay-multiplier: 6; }
-            .gallery-item:nth-child(7) { --delay-multiplier: 7; }
-            .gallery-item:nth-child(8) { --delay-multiplier: 8; }
-        
-            .gallery-item-content {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        
-            .gallery-item img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.4s ease;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-        
-            .gallery-item:nth-child(1) {
-                grid-column: 1 / span 3;
-                grid-row: 1;
-            }
-
-            .gallery-item:nth-child(2) {
-                grid-column: 4 / span 3;
-                grid-row: 1;
-            }
-
-            .gallery-item:nth-child(3) {
-                grid-column: 1 / span 2;
-                grid-row: 2;
-            }
-
-            .gallery-item:nth-child(4) {
-                grid-column: 3 / span 2;
-                grid-row: 2;
-            }
-
-            .gallery-item:nth-child(5) {
-                grid-column: 5 / span 2;
-                grid-row: 2;
-            }
-
-            .gallery-item:nth-child(6) {
-                grid-column: 1 / span 2;
-                grid-row: 3;
-            }   
-
-            .gallery-item:nth-child(7) {
-                grid-column: 3 / span 2;
-                grid-row: 3;
-            }
-
-            .gallery-item:nth-child(8) {
-                grid-column: 5 / span 2;
-                grid-row: 3;
-            }
-        
-            .gallery-overlay {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-                overflow: hidden;
-                width: 100%;
-                height: 0;
-                transition: 0.4s ease-in-out;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 10;
-            }
-        
-            .gallery-item:hover .gallery-overlay {
-                height: 60px;
-            }
-        
-            .gallery-overlay-text {
-                color: #f8d9a0;
-                font-size: 16px;
-                text-align: center;
-                white-space: nowrap;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-        
-            .gallery-item:hover .gallery-overlay-text {
-                opacity: 1;
-            }
-        
-            .gallery-item:hover img {
-                transform: scale(1.1);
-            }
-        
-            .gallery-item:hover {
-                transform: scale(1.035);
-                box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-                z-index: 20;
-            }
-        
-            @media (max-width: 1200px) {
-                .gallery-grid {
-                    grid-template-columns: repeat(4, 1fr);
-                    grid-template-rows: repeat(6, 1fr);
-                    height: auto;
-                    gap: 20px;
-                    padding: 40px 50px 20px;  
-                }
-        
-                .gallery-item:nth-child(1) {
-                    grid-column: 1 / span 4;
-                    grid-row: 1 / span 2;
-                }
-        
-                .gallery-item:nth-child(2) {
-                    grid-column: 1 / span 2;
-                    grid-row: 3;
-                }
-        
-                .gallery-item:nth-child(3) {
-                    grid-column: 3 / span 2;
-                    grid-row: 3;
-                }
-        
-                .gallery-item:nth-child(4) {
-                    grid-column: 1 / span 2;
-                    grid-row: 4;
-                }
-        
-                .gallery-item:nth-child(5) {
-                    grid-column: 3 / span 2;
-                    grid-row: 4;
-                }
-        
-                .gallery-item:nth-child(6) {
-                    grid-column: 1 / span 2;
-                    grid-row: 5;
-                }
-        
-                .gallery-item:nth-child(7) {
-                    grid-column: 3 / span 2;
-                    grid-row: 5;
-                }
-        
-                .gallery-item:nth-child(8) {
-                    display: none;
-                }
-            }
-        
-            @media (max-width: 768px) {
-                .gallery-grid {
-                    grid-template-columns: 1fr;
-                    grid-template-rows: auto;
-                    padding: 20px;
-                    gap: 15px;
-                }
-        
-                .gallery-item {
-                    grid-column: 1 !important;
-                    grid-row: auto !important;
-                }
-            }
-        </style>
-            <div class="gallery-grid">
-                <div class="gallery-item gallery-item-large">
-                    <picture>
-                        <source srcset="static/images/gallery/gallery1.avif" type="image/avif">
-                        <source srcset="static/images/gallery/gallery1.webp" type="image/webp">
-                        <img src="static/images/gallery/gallery1.jpg" alt="Elegant Restaurant Interior with Warm Lighting" />
-                    </picture>
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-text">Dining Ambiance</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <picture>
-                        <source srcset="static/images/gallery/gallery2.avif" type="image/avif">
-                        <source srcset="static/images/gallery/gallery2.webp" type="image/webp">
-                        <img src="static/images/gallery/gallery2.jpg" alt="Exquisite Italian Dish Presentation" />
-                    </picture>
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-text">Culinary Canvas</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <picture>
-                        <source srcset="static/images/gallery/gallery3.avif" type="image/avif">
-                        <source srcset="static/images/gallery/gallery3.webp" type="image/webp">
-                        <img src="static/images/gallery/gallery3.jpg" alt="Gourmet Appetizer Plate" />
-                    </picture>
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-text">Fresh Palette</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <picture>
-                        <source srcset="static/images/gallery/gallery4.avif" type="image/avif">
-                        <source srcset="static/images/gallery/gallery4.webp" type="image/webp">
-                        <img src="static/images/gallery/gallery4.jpg" alt="Chef Preparing Signature Dish" />
-                    </picture>
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-text">Gourmet Craft</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <picture>
-                        <source srcset="static/images/gallery/gallery5.avif" type="image/avif">
-                        <source srcset="static/images/gallery/gallery5.webp" type="image/webp">
-                        <img src="static/images/gallery/gallery5.jpg" alt="Wine and Cheese Pairing" />
-                    </picture>
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-text">Aperitif Moment</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <picture>
-                        <source srcset="static/images/gallery/gallery6.avif" type="image/avif">
-                        <source srcset="static/images/gallery/gallery6.webp" type="image/webp">
-                        <img src="static/images/gallery/gallery6.jpg" alt="Romantic Table Setting" />
-                    </picture>
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-text">Shared Dining Experience</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <picture>
-                        <source srcset="static/images/gallery/gallery7.avif" type="image/avif">
-                        <source srcset="static/images/gallery/gallery7.webp" type="image/webp">
-                        <img src="static/images/gallery/gallery7.jpg" alt="Outdoor Dining Terrace" />
-                    </picture>
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-text">Table Prelude</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <picture>
-                        <source srcset="static/images/gallery/gallery8.avif" type="image/avif">
-                        <source srcset="static/images/gallery/gallery8.webp" type="image/webp">
-                        <img src="static/images/gallery/gallery8.jpg" alt="Restaurant Event Space" />
-                    </picture>
-                    <div class="gallery-overlay">
-                        <div class="gallery-overlay-text">Trattoria Tradizionale</div>
-                    </div>
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-item-large">
+                <picture>
+                    <source srcset="static/images/gallery/gallery1.avif" type="image/avif">
+                    <source srcset="static/images/gallery/gallery1.webp" type="image/webp">
+                    <img src="static/images/gallery/gallery1.jpg"
+                        alt="Elegant Restaurant Interior with Warm Lighting" />
+                </picture>
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-text">Dining Ambiance</div>
                 </div>
             </div>
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="static/images/gallery/gallery2.avif" type="image/avif">
+                    <source srcset="static/images/gallery/gallery2.webp" type="image/webp">
+                    <img src="static/images/gallery/gallery2.jpg" alt="Exquisite Italian Dish Presentation" />
+                </picture>
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-text">Culinary Canvas</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="static/images/gallery/gallery3.avif" type="image/avif">
+                    <source srcset="static/images/gallery/gallery3.webp" type="image/webp">
+                    <img src="static/images/gallery/gallery3.jpg" alt="Gourmet Appetizer Plate" />
+                </picture>
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-text">Fresh Palette</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="static/images/gallery/gallery4.avif" type="image/avif">
+                    <source srcset="static/images/gallery/gallery4.webp" type="image/webp">
+                    <img src="static/images/gallery/gallery4.jpg" alt="Chef Preparing Signature Dish" />
+                </picture>
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-text">Gourmet Craft</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="static/images/gallery/gallery5.avif" type="image/avif">
+                    <source srcset="static/images/gallery/gallery5.webp" type="image/webp">
+                    <img src="static/images/gallery/gallery5.jpg" alt="Wine and Cheese Pairing" />
+                </picture>
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-text">Aperitif Moment</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="static/images/gallery/gallery6.avif" type="image/avif">
+                    <source srcset="static/images/gallery/gallery6.webp" type="image/webp">
+                    <img src="static/images/gallery/gallery6.jpg" alt="Romantic Table Setting" />
+                </picture>
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-text">Shared Dining Experience</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="static/images/gallery/gallery7.avif" type="image/avif">
+                    <source srcset="static/images/gallery/gallery7.webp" type="image/webp">
+                    <img src="static/images/gallery/gallery7.jpg" alt="Outdoor Dining Terrace" />
+                </picture>
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-text">Table Prelude</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="static/images/gallery/gallery8.avif" type="image/avif">
+                    <source srcset="static/images/gallery/gallery8.webp" type="image/webp">
+                    <img src="static/images/gallery/gallery8.jpg" alt="Restaurant Event Space" />
+                </picture>
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-text">Trattoria Tradizionale</div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="footer-top">
         <div class="footer-top-content" style="display: flex; justify-content: space-between; align-items: center;">
             <div>
-                <h1>It was a memorable</h1>
+                <h1>Bistrovanti Restaurant</h1>
                 <h2>From farm to table excellence in every bite</h2>
             </div>
 
@@ -754,14 +775,13 @@
 </body>
 
 <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const galleryGrid = document.querySelector('.gallery-grid');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-    
-            // Create zoom container
-            const zoomContainer = document.createElement('div');
-            zoomContainer.classList.add('image-zoom-container');
-            zoomContainer.style.cssText = `
+    document.addEventListener('DOMContentLoaded', () => {
+        const galleryGrid = document.querySelector('.gallery-grid');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        const zoomContainer = document.createElement('div');
+        zoomContainer.classList.add('image-zoom-container');
+        zoomContainer.style.cssText = `
                 display: none;
                 position: fixed;
                 top: 0;
@@ -776,8 +796,8 @@
                 box-sizing: border-box;
         `;
 
-            const zoomContent = document.createElement('div');
-            zoomContent.style.cssText = `
+        const zoomContent = document.createElement('div');
+        zoomContent.style.cssText = `
                 position: relative;
                 max-width: 90%;
                 max-height: 90%;
@@ -786,16 +806,16 @@
                 align-items: center;
         `;
 
-            const zoomImageContainer = document.createElement('div');
-            zoomImageContainer.style.cssText = `
+        const zoomImageContainer = document.createElement('div');
+        zoomImageContainer.style.cssText = `
                 position: relative;
                 max-width: 100%;
                 max-height: 90vh;
                 overflow: hidden;
         `;
 
-            const zoomImage = document.createElement('img');
-            zoomImage.style.cssText = `
+        const zoomImage = document.createElement('img');
+        zoomImage.style.cssText = `
                 max-width: 100%;
                 max-height: 90vh;
                 object-fit: contain;
@@ -803,59 +823,55 @@
                 transition: transform 0.3s ease;
         `;
 
-            // Zoom functionality
-            let isZoomed = false;
-            let scale = 1;
-            let startX, startY;
+        let isZoomed = false;
+        let scale = 1;
+        let startX, startY;
 
-            zoomImage.addEventListener('click', (e) => {
-                if (!isZoomed) {
-            // First click - zoom in
-            scale = 2;
-            const rect = zoomImage.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            zoomImage.style.transformOrigin = `${x}px ${y}px`;
-            zoomImage.style.transform = `scale(${scale})`;
-            zoomImage.style.cursor = 'zoom-out';
-            isZoomed = true;
-        } else {
-            // Second click - reset zoom
-            zoomImage.style.transform = 'scale(1)';
-            zoomImage.style.cursor = 'zoom-in';
-            isZoomed = false;
-            }
-        });
+        zoomImage.addEventListener('click', (e) => {
+            if (!isZoomed) {
+                scale = 2;
+                const rect = zoomImage.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
 
-            // Optional: Add dragging when zoomed
-            zoomImage.addEventListener('mousedown', (e) => {
-                if (isZoomed) {
-                    startX = e.clientX - zoomImage.offsetLeft;
-                    startY = e.clientY - zoomImage.offsetTop;
-                    zoomImage.style.cursor = 'grabbing';
-            
-            function mouseMove(e) {
-                const x = e.clientX - startX;
-                const y = e.clientY - startY;
-                zoomImage.style.left = `${x}px`;
-                zoomImage.style.top = `${y}px`;
-            }
-            
-            function mouseUp() {
+                zoomImage.style.transformOrigin = `${x}px ${y}px`;
+                zoomImage.style.transform = `scale(${scale})`;
                 zoomImage.style.cursor = 'zoom-out';
-                document.removeEventListener('mousemove', mouseMove);
-                document.removeEventListener('mouseup', mouseUp);
+                isZoomed = true;
+            } else {
+                zoomImage.style.transform = 'scale(1)';
+                zoomImage.style.cursor = 'zoom-in';
+                isZoomed = false;
             }
-            
-            document.addEventListener('mousemove', mouseMove);
-            document.addEventListener('mouseup', mouseUp);
-        }
         });
 
-            const closeButton = document.createElement('button');
-            closeButton.innerHTML = '&times;';
-            closeButton.style.cssText = `
+        zoomImage.addEventListener('mousedown', (e) => {
+            if (isZoomed) {
+                startX = e.clientX - zoomImage.offsetLeft;
+                startY = e.clientY - zoomImage.offsetTop;
+                zoomImage.style.cursor = 'grabbing';
+
+                function mouseMove(e) {
+                    const x = e.clientX - startX;
+                    const y = e.clientY - startY;
+                    zoomImage.style.left = `${x}px`;
+                    zoomImage.style.top = `${y}px`;
+                }
+
+                function mouseUp() {
+                    zoomImage.style.cursor = 'zoom-out';
+                    document.removeEventListener('mousemove', mouseMove);
+                    document.removeEventListener('mouseup', mouseUp);
+                }
+
+                document.addEventListener('mousemove', mouseMove);
+                document.addEventListener('mouseup', mouseUp);
+            }
+        });
+
+        const closeButton = document.createElement('button');
+        closeButton.innerHTML = '&times;';
+        closeButton.style.cssText = `
                 position: absolute;
                 top: -50px;
                 right: 0;
@@ -874,25 +890,25 @@
                 transition: background-color 0.3s ease, transform 0.2s ease;
         `;
 
-            closeButton.addEventListener('mouseover', (e) => {
-                e.target.style.backgroundColor = '#f0f0f0';
-                e.target.style.transform = 'scale(1.1)';
+        closeButton.addEventListener('mouseover', (e) => {
+            e.target.style.backgroundColor = '#f0f0f0';
+            e.target.style.transform = 'scale(1.1)';
         });
 
-            closeButton.addEventListener('mouseout', (e) => {
-                e.target.style.backgroundColor = 'white';
-                e.target.style.transform = 'scale(1)';
+        closeButton.addEventListener('mouseout', (e) => {
+            e.target.style.backgroundColor = 'white';
+            e.target.style.transform = 'scale(1)';
         });
 
-            zoomImageContainer.appendChild(zoomImage);
-            zoomContent.appendChild(closeButton);
-            zoomContent.appendChild(zoomImageContainer);
-            zoomContainer.appendChild(zoomContent);
-            document.body.appendChild(zoomContainer);
+        zoomImageContainer.appendChild(zoomImage);
+        zoomContent.appendChild(closeButton);
+        zoomContent.appendChild(zoomImageContainer);
+        zoomContainer.appendChild(zoomContent);
+        document.body.appendChild(zoomContainer);
 
-            galleryItems.forEach((item, index) => {
-                const img = item.querySelector('img');
-                const sources = item.querySelectorAll('source');
+        galleryItems.forEach((item, index) => {
+            const img = item.querySelector('img');
+            const sources = item.querySelectorAll('source');
 
             if (!img) {
                 console.error(`No image found in gallery item ${index + 1}`);
@@ -903,33 +919,29 @@
             const avifSource = item.querySelector('source[type="image/avif"]');
             const webpSource = item.querySelector('source[type="image/webp"]');
 
-            const bestSource = 
-                (avifSource && avifSource.srcset) || 
-                (webpSource && webpSource.srcset) || 
+            const bestSource =
+                (avifSource && avifSource.srcset) ||
+                (webpSource && webpSource.srcset) ||
                 fallbackSrc;
 
-            // Make images clickable
-                img.style.cursor = 'pointer';
-                img.addEventListener('click', (e) => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', (e) => {
                 e.stopPropagation();
                 zoomImage.src = bestSource;
                 zoomContainer.style.display = 'flex';
-            
-            // Reset zoom state
+
                 zoomImage.style.transform = 'scale(1)';
                 zoomImage.style.cursor = 'zoom-in';
                 isZoomed = false;
             });
         });
 
-            // Close zoom on button click
-            closeButton.addEventListener('click', () => {
-                zoomContainer.style.display = 'none';
-         });
+        closeButton.addEventListener('click', () => {
+            zoomContainer.style.display = 'none';
+        });
 
-            // Close zoom when clicking outside image
-            zoomContainer.addEventListener('click', (e) => {
-                if (e.target === zoomContainer) {
+        zoomContainer.addEventListener('click', (e) => {
+            if (e.target === zoomContainer) {
                 zoomContainer.style.display = 'none';
             }
         });
@@ -955,6 +967,4 @@
     }
 
 </script>
-
-
 </html>

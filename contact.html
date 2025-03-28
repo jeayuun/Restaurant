@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="static/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fasthand&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="static/images/favicon.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
@@ -211,7 +213,7 @@
             max-width: 100%;
             display: inline-block;
         }
-        
+
         .contact-info {
             width: 75%;
             font-size: 16px;
@@ -228,7 +230,7 @@
             max-width: 1200px;
             margin: 60px;
         }
-        
+
         .contact-form {
             display: flex;
             flex-direction: column;
@@ -262,8 +264,9 @@
             font-size: 14px;
             font-weight: bold;
         }
-        
-        input, textarea {
+
+        input,
+        textarea {
             width: 100%;
             padding: 8px;
             border: 1px solid #ccc;
@@ -290,22 +293,22 @@
 
         .map-container {
             margin-top: 30px;
-            flex: 1; 
+            flex: 1;
         }
-        
+
         iframe {
             width: 70%;
             height: 300px;
             border: 0;
         }
-        
+
         /* Responsive Design - Stack items on small screens */
         @media (max-width: 768px) {
             .contact-container {
                 flex-direction: column;
                 align-items: center;
             }
-        
+
             .contact-form,
             .map-container {
                 max-width: 100%;
@@ -569,7 +572,7 @@
     </header>
     <section class="hero">
         <h1>CONTACT US</h1>
-        <div class="contact-img-block"><img
+        <div class="contact-img-block" data-aos="fade-up" data-aos-duration="1500"><img
                 src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66f2ada495c7faecaf527c58_single-img-17.avif"
                 loading="lazy"
                 sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, (max-width: 1439px) 98vw, (max-width: 1919px) 95vw, 1820px"
@@ -578,7 +581,7 @@
     </section>
 
     <!-- Contact Page -->
-    <section>
+    <section class="contact-container" data-aos="fade-left" data-aos-duration="1500">
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Bistrovanti time <span style="font-weight: normal;">(Breakfast, Lunch, Dinner)</span></h3>
@@ -595,40 +598,41 @@
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15449.03072848018!2d120.97127468997128!3d14.527247750576583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9a4e29ceb4f%3A0xd617dd0f3dfc499e!2sParqal!5e0!3m2!1sen!2sph!4v1742965522872!5m2!1sen!2sph"
                         allowfullscreen="" loading="lazy"></iframe>
                 </div>
-        </div>
-    
-        <div class="contact-form">
-            <h2>We value your feedback and inquiries. Please feel free to get in touch with us using the following contact information:</h2>
-            <form id="contactForm" onsubmit="return validateForm()">
-            <div class="row">
-                <label for="first-name">First name (required)</label>
-                <input type="text" id="first-name" required>
-                
-                <label for="last-name">Last name (required)</label>
-                <input type="text" id="last-name" required>
             </div>
-            <div class="row">
-                <label for="email">Email Address</label>
-                <input type="email" id="email">
-                
-                <label for="phone">Phone number (required)</label>
-                <input type="tel" id="phone" required>
+
+            <div class="contact-form">
+                <h2>We value your feedback and inquiries. Please feel free to get in touch with us using the following
+                    contact information:</h2>
+                <form id="contactForm" onsubmit="return validateForm()">
+                    <div class="row">
+                        <label for="first-name">First name (required)</label>
+                        <input type="text" id="first-name" required>
+
+                        <label for="last-name">Last name (required)</label>
+                        <input type="text" id="last-name" required>
+                    </div>
+                    <div class="row">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email">
+
+                        <label for="phone">Phone number (required)</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <label for="message">Message (required)</label>
+                    <textarea id="message" rows="4" required></textarea>
+                    <a href="" class="more-btn-border" style="border-color: #001528;">
+                        <button type="submit" class="more-btn reservation-btn">
+                            Submit now
+                            <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d170edb95b798eeea3c007_icon-01.svg"
+                                loading="lazy" alt="Icon" class="inline-btn-icon" style="padding-left: 10px;">
+                        </button>
+                    </a>
+                </form>
             </div>
-            <label for="message">Message (required)</label>
-            <textarea id="message" rows="4" required></textarea>
-            <a href="" class="more-btn-border" style="border-color: #001528;">
-                <button type="submit" class="more-btn reservation-btn">
-                    Submit now
-                    <img src="https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d170edb95b798eeea3c007_icon-01.svg"
-                        loading="lazy" alt="Icon" class="inline-btn-icon" style="padding-left: 10px;">
-                </button>
-            </a>
-            </form>
         </div>
-    </div>
-</div>
+        </div>
     </section>
-    
+
     <section class="socials" data-aos="fade-up" data-aos-duration="1500">
         <h1>Follow us</h1>
         <div class="socials-gallery" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
@@ -663,7 +667,7 @@
     <section class="footer-top">
         <div class="footer-top-content" style="display: flex; justify-content: space-between; align-items: center;">
             <div>
-                <h1>It was a memorable</h1>
+                <h1>Bistrovanti Restaurant</h1>
                 <h2>From farm to table excellence in every bite</h2>
             </div>
 

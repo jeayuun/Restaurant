@@ -6,9 +6,12 @@
 
 body {
     font-family: Taviraj, sans-serif;
-    background-color: #1b2d1f;
-    color: #f8d9a0;
 }
+
+html, body {
+    overflow-x: hidden;
+}
+
 
 @font-face {
     font-family: 'Edensor Free';
@@ -16,3 +19,265 @@ body {
     font-weight: normal;
     font-style: normal;
 }
+
+
+
+/* Socials Section */
+.socials {
+    padding: 20px;
+    background-color: #1b2d1f;
+    color: #fff4de;
+    font-size: 30px;
+    line-height: 100px;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.socials-gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-item {
+    position: relative;
+    width: 230px;
+    height: 230px;
+    margin: 0 15px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.social-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.social-item:hover img {
+    transform: scale(1.1);
+    filter: blur(1px);
+    opacity: 0.65;
+}
+
+.social-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background-position: center;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.social-item:hover .social-icon {
+    opacity: 1;
+    border-radius: 200px;
+    background-color: #fff4de;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    overflow: hidden;
+}
+
+.social-icon.instagram {
+    background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Instagram-Outline-1024.png');
+}
+
+.social-icon.facebook {
+    background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Facebook-Outline-512.png');
+}
+
+.social-icon.twitter {
+    background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Tumblr-Outline-1024.png');
+}
+
+.social-icon.pinterest {
+    background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Pinterest-Outline-1024.png');
+}
+
+.social-icon.youtube {
+    background-image: url('https://cdn1.iconfinder.com/data/icons/social-media-outline-6/128/SocialMedia_Youtube-Outline-1024.png');
+}
+
+@media (max-width: 768px) {
+    .social-item {
+        width: 45%;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-item {
+        width: 80%;
+        height: 150px;
+    }
+}
+
+
+
+
+
+
+.more-btn-border {
+    padding: 5px;
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+    border: 1px solid #ffd99f;
+    border-radius: 30px;
+    margin-top: 10px;
+    transition: transform 0.5s ease;
+}
+
+.more-btn-border {
+    padding: 5px;
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+    border: 1px solid #ffd99f;
+    border-radius: 30px;
+    margin-top: 10px;
+    transition: transform 0.5s ease;
+}
+
+
+
+
+
+
+
+/* Footer Section */
+.footer-top,
+.footer {
+    background-color: #fff4de;
+    color: #001528;
+    padding: 60px 90px;
+    padding-bottom: 20px;
+}
+
+.footer-top h1 {
+    font-family: "Fasthand", cursive;
+    font-size: 35px;
+    font-weight: 200;
+    line-height: 40px;
+    font-style: normal;
+}
+
+.footer-top h2 {
+    font-size: 48px;
+    font-weight: 600;
+    margin: 10px 0;
+    font-size: 58px;
+    line-height: 68px;
+    max-width: 800px;
+}
+
+.footer {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.footer-item {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 20px;
+}
+
+.footer-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.footer-item p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.reservation-btn {
+    padding: 12px 20px;
+    background-color: #001528;
+    color: #fff4de;
+    border: 1px solid #001528;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    font-family: Taviraj, sans-serif;
+}
+
+.reservation-btn:hover {
+    background-color: #0a2844;
+}
+
+.more-btn-border {
+    padding: 5px;
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+    border: 1px solid #ffd99f;
+    border-radius: 30px;
+    margin-top: 10px;
+    transition: transform 0.5s ease;
+}
+
+.marquee-container {
+    width: 130%;
+    padding: 0;
+    margin-left: -90px;
+    margin-bottom: -40px;
+    margin-top: -20px;
+}
+
+.marquee-text {
+    font-size: 154px;
+    font-weight: 600;
+    background-color: #001528;
+    -webkit-text-fill-color: transparent;
+    background-image: url('https://cdn.prod.website-files.com/66c9bf3cbad8964a2609b4e6/66d58ae12c15417538d105e9_single-img-06.avif');
+    background-size: cover;
+    background-position: 0%;
+    background-clip: text;
+    padding: 0px;
+    white-space: nowrap;
+    animation: marquee 28s linear infinite;
+    display: inline-block;
+    position: relative;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(-30%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .marquee-text {
+        font-size: 60px;
+        line-height: 70px;
+    }
+}
+
+
